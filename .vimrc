@@ -27,10 +27,9 @@ set backspace=start,eol,indent
 
 "フォントの設定
 set guifont=Osaka－等幅\ レギュラー－等幅:h12:cSHIFTJIS
-
 let s:using_font= 'Osaka' . "\x81\x7c\x93\x99\x95\x9d"
 let &guifont=s:using_font . ':h12:cSHIFTJIS'
 unlet s:using_font
 
-
+autocmd BufNewFile *.py 0r ~/dotfiles/templates/python.txt
 
