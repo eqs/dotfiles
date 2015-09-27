@@ -25,6 +25,9 @@ set smarttab
 "backspaceの挙動を普通のエディタと同じにする
 set backspace=start,eol,indent
 
+"正規表現をVery Magicに
+nnoremap / /\v
+
 "フォントの設定
 set guifont=Osaka－等幅\ レギュラー－等幅:h12:cSHIFTJIS
 let s:using_font= 'Osaka' . "\x81\x7c\x93\x99\x95\x9d"
