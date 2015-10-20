@@ -2,8 +2,10 @@
 "エンコーディング指定
 set encoding=utf-8
 
-"ターミナルでのエンコーディング
-set termencoding=cp932
+if has("win32")
+	"ターミナルでのエンコーディング
+	set termencoding=cp932
+endif
 
 "タブ幅の設定
 set shiftwidth=4
