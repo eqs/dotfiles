@@ -2,7 +2,7 @@
 "エンコーディング指定
 set encoding=utf-8
 
-if has("win32")
+if has("win64")
 	"ターミナルでのエンコーディング
 	set termencoding=cp932
 endif
@@ -39,4 +39,19 @@ if has("win32")
 endif
 
 autocmd BufNewFile *.py 0r ~/dotfiles/templates/python.txt
+
+" 改行とかタブとかを表示する
+set list
+set listchars=eol:$,tab:>_
+
+" 折り返されたテキストの上でいい感じに動く
+nnoremap j gj
+nnoremap k gk
+" Ctrl + hjklでウインドウを移動する
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+"command Puttime "=strftime("%c")
 
