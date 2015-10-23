@@ -42,7 +42,7 @@ autocmd BufNewFile *.py 0r ~/dotfiles/templates/python.txt
 
 " 改行とかタブとかを表示する
 set list
-set listchars=eol:$,tab:>_
+set listchars=eol:$,tab:>\ 
 
 " 折り返されたテキストの上でいい感じに動く
 nnoremap j gj
