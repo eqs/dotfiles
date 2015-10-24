@@ -38,6 +38,7 @@ if has("win32")
 	unlet s:using_font
 endif
 
+"Pythonファイルを作るときはテンプレートを挿入
 autocmd BufNewFile *.py 0r ~/dotfiles/templates/python.txt
 
 " 改行とかタブとかを表示する
