@@ -57,5 +57,8 @@ nnoremap <C-l> <C-w>l
 "カラースキーマを変える
 colorscheme desert
 
+"現在の時刻を入力する
+inoremap <expr> <C-x>date strftime("%c")
+
 "command Puttime "=strftime("%c")
 
