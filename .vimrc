@@ -40,6 +40,8 @@ endif
 
 "Pythonファイルを作るときはテンプレートを挿入
 autocmd BufNewFile *.py 0r ~/dotfiles/templates/python.txt
+"LaTeXファイルを作るときはテンプレートを挿入
+autocmd BufNewFile *.tex 0r ~/dotfiles/templates/latex.txt
 
 " 改行とかタブとかを表示する
 set list
