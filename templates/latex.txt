@@ -1,0 +1,13 @@
+\documentclass[10pt, a4paper, dvipdfmx]{jsarticle}
+
+\usepackage[margin=25truemm]{geometry}
+\usepackage{xcolor, graphicx}
+\usepackage{amsmath, amssymb}
+
+\title{spam ham egg}
+\author{Satoshi MURASHIGE}
+\date{\today}
+
+\begin{document}
+
+\end{document}
