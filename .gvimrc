@@ -11,6 +11,10 @@ colorscheme desert
 
 "ツールバーを消す
 set guioptions-=T
+"メニューバーを消す
+set guioptions-=m
+"メニューバーを消す
+set guioptions-=r
 "画面をでかくする
 "set lines=90 columns=200
 
