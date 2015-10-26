@@ -1,6 +1,13 @@
-if has("win64")
-	let &guifont=iconv('Osaka－等幅:h12:cSHIFTJIS', &encoding, 'cp932')
+if has("win32")
+	"フォントの設定
+	set guifont=Osaka－等幅:h12:cSHIFTJIS
+	"let s:using_font= 'Osaka' . "\x81\x7c\x93\x99\x95\x9d"
+	"let &guifont=s:using_font . ':h12:cSHIFTJIS'
+	"unlet s:using_font
 endif
+
+"カラースキーマを変える
+colorscheme desert
 
 "ツールバーを消す
 set guioptions-=T
