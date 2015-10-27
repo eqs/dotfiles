@@ -45,7 +45,7 @@ autocmd BufNewFile *.tex 0r ~/dotfiles/templates/latex.txt
 
 " 改行とかタブとかを表示する
 set list
-set listchars=eol:$,tab:>\ 
+set listchars=eol:$,tab:>\ ,trail:-,extends:<
 
 " 折り返されたテキストの上でいい感じに動く
 nnoremap j gj
