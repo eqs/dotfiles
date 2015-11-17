@@ -64,3 +64,6 @@ inoremap <expr> <C-x>date strftime("%c")
 
 "command Puttime "=strftime("%c")
 
+" 印刷の設定
+set printheader=%t\ Page\ %N\ (%{strftime('%c')})%=
+set printoptions=wrap:y,number:y
