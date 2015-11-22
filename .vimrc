@@ -36,6 +36,9 @@ if has("win32")
 	let s:using_font= 'Osaka' . "\x81\x7c\x93\x99\x95\x9d"
 	let &guifont=s:using_font . ':h12:cSHIFTJIS'
 	unlet s:using_font
+	"標準でIMEをオフにする (起動時のデフォルトを全角入力にしない)
+	set iminsert=0
+	set imsearch=-1
 endif
 
 "Pythonファイルを作るときはテンプレートを挿入
@@ -67,3 +70,4 @@ inoremap <expr> <C-x>date strftime("%c")
 " 印刷の設定
 set printheader=%t\ Page\ %N\ (%{strftime('%c')})%=
 set printoptions=wrap:y,number:y
+
