@@ -12,7 +12,7 @@
 
 \begin{document}
 	\begin{flushleft}
-		\textbf{\Title\hfill(\Date\ Author)}
+		\textbf{\Title\hfill(\Date\ \Author)}
 	\end{flushleft}
 
 \end{document}
