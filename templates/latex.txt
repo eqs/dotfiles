@@ -4,10 +4,15 @@
 \usepackage{xcolor, graphicx}
 \usepackage{amsmath, amssymb}
 
-\title{spam ham egg}
-\author{Satoshi MURASHIGE}
-\date{\today}
+\makeatletter
+\title{spam ham egg}\let\Title\@title
+\author{Satoshi MURASHIGE}\let\Author\@author
+\date{\number\year.\number\month.\number\day}\let\Date\@date
+\makeatother
 
 \begin{document}
+	\begin{flushleft}
+		\textbf{\Title\hfill(\Date\ Author)}
+	\end{flushleft}
 
 \end{document}
