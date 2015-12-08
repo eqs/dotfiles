@@ -23,9 +23,12 @@ syntax on
 "タブを賢くする
 set smarttab
 "タブ文字を展開する
-"set expandtab
+set expandtab
 "backspaceの挙動を普通のエディタと同じにする
 set backspace=start,eol,indent
+
+"Ctrl-vの矩形選択で，行末より後ろにカーソルを置ける
+set virtualedit=block
 
 "正規表現をVery Magicに
 nnoremap / /\v
