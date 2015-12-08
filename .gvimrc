@@ -18,5 +18,6 @@ set guioptions-=r
 "画面をでかくする
 "set lines=90 columns=200
 
-"ウインドウを半透明にしたい
-"autocmd GUIEnter * set transparency=128
+"アンダーラインを引く
+set cursorline
+highlight CursorLine gui=underline guifg=NONE guibg=NONE

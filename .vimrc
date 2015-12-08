@@ -30,6 +30,10 @@ set backspace=start,eol,indent
 "Ctrl-vの矩形選択で，行末より後ろにカーソルを置ける
 set virtualedit=block
 
+"アンダーラインを引く
+set cursorline
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+
 "正規表現をVery Magicに
 nnoremap / /\v
 
