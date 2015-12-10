@@ -78,3 +78,8 @@ inoremap <expr> <C-x>date strftime("%c")
 set printheader=%t\ Page\ %N\ (%{strftime('%c')})%=
 set printoptions=wrap:y,number:y
 
+"タブをスペース展開しない
+autocmd FileType java,c,cs,cpp,h,hpp set noexpandtab
+
+"Makefileではタブをスペース展開しない
+autocmd FileType make set noexpandtab
