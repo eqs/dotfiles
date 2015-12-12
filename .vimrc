@@ -86,3 +86,7 @@ autocmd FileType tex,java,c,cs,cpp,h,hpp set noexpandtab
 
 "Makefileではタブをスペース展開しない
 autocmd FileType make set noexpandtab
+
+"全角スペースを表示する
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+match ZenkakuSpace /　/
