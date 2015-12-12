@@ -21,3 +21,7 @@ set guioptions-=r
 "アンダーラインを引く
 set cursorline
 highlight CursorLine gui=underline guifg=NONE guibg=NONE
+
+"全角スペースを表示する
+highlight ZenkakuSpace gui=underline guifg=lightblue guibg=darkgray
+match ZenkakuSpace /　/
