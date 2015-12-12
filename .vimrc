@@ -90,3 +90,15 @@ autocmd FileType make set noexpandtab
 "全角スペースを表示する
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
+
+"括弧の自動補完
+autocmd FileType tex inoremap { {}<LEFT>
+autocmd FileType tex inoremap } <RIGHT>
+autocmd FileType py inoremap ( ()<LEFT>
+autocmd FileType py inoremap ) <RIGHT>
+autocmd FileType py inoremap { {}<LEFT>
+autocmd FileType py inoremap } <RIGHT>
+autocmd FileType py inoremap [ []<LEFT>
+autocmd FileType py inoremap ] <RIGHT>
+autocmd FileType c,java inoremap ( ()<LEFT>
+autocmd FileType c,java inoremap ) <RIGHT>
