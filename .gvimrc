@@ -6,6 +6,15 @@ if has("win32")
 	"unlet s:using_font
 endif
 
+"メニューを英語にする
+source $VIMRUNTIME/delmenu.vim
+"set langmenu=ja_jp.utf-8
+set langmenu=none
+source $VIMRUNTIME/menu.vim
+if has("multi_lang")
+language C
+endif
+
 "カラースキーマを変える
 colorscheme desert
 
@@ -25,3 +34,4 @@ highlight CursorLine gui=underline guifg=NONE guibg=NONE
 "全角スペースを表示する
 highlight ZenkakuSpace gui=underline guifg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
+
