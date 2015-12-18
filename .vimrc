@@ -1,4 +1,27 @@
 
+if has('vim_starting')
+    if &compatible
+        set nocompatible
+    endif
+    " neobundleがなければ自動インストール
+    if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
+        echo "installing neobundle ... "
+        :call system("git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
+    endif
+
+    set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+"Bundles
+NeoBundle 'sophacles/vim-processing'
+NeoBundleLazy 'hynek/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['python', 'python3']}}
+
+call neobundle#end()
+
+filetype plugin indent on
+
 "エンコーディング指定
 set encoding=utf-8
 
