@@ -49,6 +49,8 @@ set smarttab
 set expandtab
 "backspaceの挙動を普通のエディタと同じにする
 set backspace=start,eol,indent
+"beep音を切る
+set visualbell
 
 "Ctrl-vの矩形選択で，行末より後ろにカーソルを置ける
 set virtualedit=block
