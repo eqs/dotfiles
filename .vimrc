@@ -22,6 +22,8 @@ call neobundle#end()
 
 filetype plugin indent on
 
+let g:tex_flavor = 'tex'
+
 "エンコーディング指定
 set encoding=utf-8
 
