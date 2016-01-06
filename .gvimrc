@@ -35,3 +35,5 @@ highlight CursorLine gui=underline guifg=NONE guibg=NONE
 highlight ZenkakuSpace gui=underline guifg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
 
+"beep音を切る，画面フラッシュも消す
+set vb t_vb=

@@ -6,7 +6,7 @@ if has('vim_starting')
     " neobundleがなければ自動インストール
     if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
         echo "installing neobundle ... "
-        :call system("git clone http://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
+        :call system("git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
     endif
 
     set runtimepath+=~/.vim/bundle/neobundle.vim
@@ -21,6 +21,8 @@ NeoBundleLazy 'hynek/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['pyt
 call neobundle#end()
 
 filetype plugin indent on
+
+let g:tex_flavor = 'tex'
 
 "エンコーディング指定
 set encoding=utf-8
@@ -49,6 +51,8 @@ set smarttab
 set expandtab
 "backspaceの挙動を普通のエディタと同じにする
 set backspace=start,eol,indent
+"beep音を切る，画面フラッシュも消す
+set vb t_vb=
 
 "Ctrl-vの矩形選択で，行末より後ろにカーソルを置ける
 set virtualedit=block
