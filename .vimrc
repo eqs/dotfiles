@@ -116,6 +116,15 @@ autocmd FileType make set noexpandtab
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
 
+"メニューを英語にする
+source $VIMRUNTIME/delmenu.vim
+"set langmenu=ja_jp.utf-8
+set langmenu=none
+source $VIMRUNTIME/menu.vim
+if has("multi_lang")
+language C
+endif
+
 "括弧の自動補完
 "autocmd FileType tex inoremap { {}<LEFT>
 "autocmd FileType tex inoremap } <RIGHT>
