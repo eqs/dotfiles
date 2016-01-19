@@ -37,3 +37,5 @@ match ZenkakuSpace /　/
 
 "beep音を切る，画面フラッシュも消す
 set vb t_vb=
+
+au GUIEnter * simalt ~x
