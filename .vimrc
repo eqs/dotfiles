@@ -17,6 +17,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 "Bundles
 NeoBundle 'sophacles/vim-processing'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['python', 'python3']}}
+NeoBundle 'lambdalisue/vim-fullscreen'
 
 call neobundle#end()
 
@@ -27,7 +28,7 @@ let g:tex_flavor = 'tex'
 "エンコーディング指定
 set encoding=utf-8
 
-if has("win64")
+if has("win32")
 	"ターミナルでのエンコーディング
 	set termencoding=cp932
 endif
@@ -96,9 +97,6 @@ nnoremap <C-l> <C-w>l
 " sは使わない
 nnoremap s <Nop>
 
-"カラースキーマを変える
-colorscheme desert
-
 "現在の時刻を入力する
 inoremap <expr> <C-x>date strftime("%c")
 
@@ -117,6 +115,15 @@ autocmd FileType make set noexpandtab
 "全角スペースを表示する
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
+
+"メニューを英語にする
+source $VIMRUNTIME/delmenu.vim
+"set langmenu=ja_jp.utf-8
+set langmenu=none
+source $VIMRUNTIME/menu.vim
+if has("multi_lang")
+language C
+endif
 
 "括弧の自動補完
 "autocmd FileType tex inoremap { {}<LEFT>
