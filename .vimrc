@@ -18,6 +18,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundle 'sophacles/vim-processing'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['python', 'python3']}}
 NeoBundle 'lambdalisue/vim-fullscreen'
+NeoBundle 'ivanov/vim-ipython'
 
 call neobundle#end()
 
