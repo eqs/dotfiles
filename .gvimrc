@@ -22,8 +22,12 @@ colorscheme desert
 set guioptions-=T
 "メニューバーを消す
 set guioptions-=m
-"メニューバーを消す
+"スクロールバーを消す
 set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+set guioptions-=b
 "画面をでかくする
 "set lines=90 columns=200
 
