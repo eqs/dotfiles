@@ -100,13 +100,15 @@ nnoremap <C-l> <C-w>l
 " sは使わない
 nnoremap s <Nop>
 
-" IPythonを非同期で実行する
-nnoremap <silent> ,ipy :VimShellInteractive ipython<CR>
-
 "現在の時刻を入力する
 inoremap <expr> <C-x>date strftime("%c")
 
 "command Puttime "=strftime("%c")
+
+" IPythonを非同期で実行する
+command! IPythonh :VimShellInteractive --split=split ipython
+command! IPythonv :VimShellInteractive --split=vsplit ipython
+
 
 " 印刷の設定
 set printheader=%t\ Page\ %N\ (%{strftime('%c')})%=
