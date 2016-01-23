@@ -19,6 +19,8 @@ NeoBundle 'sophacles/vim-processing'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['python', 'python3']}}
 NeoBundle 'lambdalisue/vim-fullscreen'
 NeoBundle 'ivanov/vim-ipython'
+NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'make -f make_mingw32.mak', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make', 'linux' : 'make', 'unix' : 'gmake'}}
+NeoBundle 'Shougo/vimshell.vim'
 
 call neobundle#end()
 
@@ -97,6 +99,9 @@ nnoremap <C-l> <C-w>l
 
 " sは使わない
 nnoremap s <Nop>
+
+" IPythonを非同期で実行する
+nnoremap <silent> ,ipy :VimShellInteractive ipython<CR>
 
 "現在の時刻を入力する
 inoremap <expr> <C-x>date strftime("%c")
