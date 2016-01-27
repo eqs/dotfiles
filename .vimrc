@@ -21,6 +21,7 @@ NeoBundle 'lambdalisue/vim-fullscreen'
 NeoBundle 'ivanov/vim-ipython'
 NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'make -f make_mingw32.mak', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make', 'linux' : 'make', 'unix' : 'gmake'}}
 NeoBundle 'Shougo/vimshell.vim'
+NeoBundle 'chrisbra/csv.vim'
 
 call neobundle#end()
 
