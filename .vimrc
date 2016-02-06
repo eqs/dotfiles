@@ -33,6 +33,9 @@ call neobundle#end()
 
 filetype plugin indent on
 
+"vim-gistaで使うユーザネーム
+let g:gista#client#default_username = 'eqs'
+
 let g:tex_flavor = 'tex'
 
 "エンコーディング指定
