@@ -18,10 +18,16 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundle 'sophacles/vim-processing'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['python', 'python3']}}
 NeoBundle 'lambdalisue/vim-fullscreen'
-NeoBundle 'ivanov/vim-ipython'
-NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'make -f make_mingw32.mak', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make', 'linux' : 'make', 'unix' : 'gmake'}}
-NeoBundle 'Shougo/vimshell.vim'
+"NeoBundle 'ivanov/vim-ipython'
+"NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'make -f make_mingw32.mak', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make', 'linux' : 'make', 'unix' : 'gmake'}}
+"NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'chrisbra/csv.vim'
+NeoBundleLazy 'lambdalisue/vim-gista', {
+            \ 'autoload': {
+            \   'commands': ['Gista'],
+            \   'mappings': '<Plug>(gista-',
+            \   'unite_sources': 'gista',
+            \}}
 
 call neobundle#end()
 
