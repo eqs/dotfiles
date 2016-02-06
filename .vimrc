@@ -35,6 +35,11 @@ set encoding=utf-8
 if has("win32")
 	"ターミナルでのエンコーディング
 	set termencoding=cp932
+	"PythonのDLL
+	let $PYTHON3_DLL="~/Miniconda35/python35.dll"
+	"標準でIMEをオフにする (起動時のデフォルトを全角入力にしない)
+	set iminsert=0
+	set imsearch=-1
 endif
 
 "タブ幅の設定
@@ -68,12 +73,6 @@ highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 
 "正規表現をVery Magicに
 nnoremap / /\v
-
-if has("win32")
-	"標準でIMEをオフにする (起動時のデフォルトを全角入力にしない)
-	set iminsert=0
-	set imsearch=-1
-endif
 
 "Pythonファイルを作るときはテンプレートを挿入
 autocmd BufNewFile *.py 0r ~/dotfiles/templates/python.txt
