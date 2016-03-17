@@ -80,6 +80,16 @@ set virtualedit=block
 set cursorline
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 
+"スクロール時の余白
+set scrolloff=3
+
+"バックアップ無し
+set nobackup
+"swpファイル無し
+set noswapfile
+"自動再読み込み
+set autoread
+
 "正規表現をVery Magicに
 nnoremap / /\v
 
@@ -156,5 +166,6 @@ endif
 imap { {}<LEFT>
 imap ( ()<LEFT>
 imap [ []<LEFT>
+"LaTeX書くときだけインライン数式も補完する
 autocmd FileType tex inoremap $ $$<LEFT>
 
