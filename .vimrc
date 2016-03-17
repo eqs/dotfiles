@@ -104,15 +104,30 @@ nnoremap <C-l> <C-w>l
 " sは使わない
 nnoremap s <Nop>
 
+" vを2回たたくと行末まで選択する
+vnoremap v $h
+
 "現在の時刻を入力する
 inoremap <expr> <C-x>date strftime("%c")
 
-"command Puttime "=strftime("%c")
+" タブとウインドウ関連の設定
+" 垂直分割
+nnoremap ww :<C-u>vs<CR>
+" 水平分割
+nnoremap wh :<C-u>sp<CR>
+" 新しいタブ
+nnoremap tt :<C-u>tabnew<CR>
+" 次のタブ
+nnoremap tn gt
+" 前のタブ
+nnoremap tp gT
 
 " IPythonを非同期で実行する
 command! IPythonh :VimShellInteractive --split=split ipython
 command! IPythonv :VimShellInteractive --split=vsplit ipython
 
+" 80文字目に線をいれる
+set colorcolumn=80
 
 " 印刷の設定
 set printheader=%t\ Page\ %N\ (%{strftime('%c')})%=
@@ -138,19 +153,8 @@ language C
 endif
 
 "括弧の自動補完
-"autocmd FileType tex inoremap { {}<LEFT>
-"autocmd FileType tex inoremap } <RIGHT>
-"autocmd FileType tex inoremap [ []<LEFT>
-"autocmd FileType tex inoremap ] <RIGHT>
-"autocmd FileType tex inoremap \\[ \\[\\]<LEFT><LEFT>
-"autocmd FileType tex inoremap \\] <RIGHT><RIGHT>
-"autocmd FileType python inoremap ( ()<LEFT>
-"autocmd FileType python inoremap ) <RIGHT>
-"autocmd FileType python inoremap { {}<LEFT>
-"autocmd FileType python inoremap } <RIGHT>
-"autocmd FileType python inoremap [ []<LEFT>
-"autocmd FileType python inoremap ] <RIGHT>
-"autocmd FileType c,java inoremap ( ()<LEFT>
-"autocmd FileType c,java inoremap ) <RIGHT>
-"autocmd FileType c,java inoremap " ""<LEFT>
-"autocmd FileType c,java inoremap ' ''<LEFT>
+imap { {}<LEFT>
+imap ( ()<LEFT>
+imap [ []<LEFT>
+autocmd FileType tex inoremap $ $$<LEFT>
+
