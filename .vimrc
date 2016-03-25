@@ -29,6 +29,8 @@ NeoBundleLazy 'lambdalisue/vim-gista', {
             \   'unite_sources': 'gista',
             \}}
 
+NeoBundle 'zah/nimrod.vim'
+
 call neobundle#end()
 
 filetype plugin indent on
