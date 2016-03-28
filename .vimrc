@@ -165,9 +165,12 @@ language C
 endif
 
 "括弧の自動補完
-imap { {}<LEFT>
-imap ( ()<LEFT>
-imap [ []<LEFT>
+inoremap { {}<LEFT>
+inoremap ( ()<LEFT>
+inoremap [ []<LEFT>
+inoremap } <RIGHT>
+inoremap ) <RIGHT>
+inoremap ] <RIGHT>
 "LaTeX書くときだけインライン数式も補完する
 autocmd FileType tex inoremap $ $$<LEFT>
 
