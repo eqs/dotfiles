@@ -144,6 +144,7 @@ set colorcolumn=80
 " 印刷の設定
 set printheader=%t\ Page\ %N\ (%{strftime('%c')})%=
 set printoptions=wrap:y,number:y
+set printfont=MigMix\ 1M:h12
 
 "タブをスペース展開しない
 autocmd FileType tex,java,c,cs,cpp,h,hpp set noexpandtab
