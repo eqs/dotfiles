@@ -4,7 +4,7 @@ if has('vim_starting')
         set nocompatible
     endif
     " neobundleがなければ自動インストール
-    if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
+    if !isdirectory(expand("~/.vim/bundle/neobundle.vim"))
         echo "installing neobundle ... "
         :call system("git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
     endif
