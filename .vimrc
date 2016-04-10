@@ -165,13 +165,13 @@ if has("multi_lang")
 language C
 endif
 
-"括弧の自動補完
-inoremap { {}<LEFT>
-inoremap ( ()<LEFT>
-inoremap [ []<LEFT>
-inoremap } <RIGHT>
-inoremap ) <RIGHT>
-inoremap ] <RIGHT>
-"LaTeX書くときだけインライン数式も補完する
-autocmd FileType tex inoremap $ $$<LEFT>
+""括弧の自動補完
+"inoremap { {}<LEFT>
+"inoremap ( ()<LEFT>
+"inoremap [ []<LEFT>
+"inoremap } <RIGHT>
+"inoremap ) <RIGHT>
+"inoremap ] <RIGHT>
+""LaTeX書くときだけインライン数式も補完する
+"autocmd FileType tex inoremap $ $$<LEFT>
 
