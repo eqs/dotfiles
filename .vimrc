@@ -31,6 +31,10 @@ NeoBundleLazy 'lambdalisue/vim-gista', {
 
 NeoBundle 'zah/nimrod.vim'
 
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
+let g:airline_theme = 'dark'
+
 call neobundle#end()
 
 filetype plugin indent on
