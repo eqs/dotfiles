@@ -35,6 +35,8 @@ NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 let g:airline_theme = 'dark'
 
+NeoBundle 'davidhalter/jedi-vim'
+
 call neobundle#end()
 
 filetype plugin indent on
