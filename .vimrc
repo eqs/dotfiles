@@ -84,10 +84,6 @@ set vb t_vb=
 "Ctrl-vの矩形選択で，行末より後ろにカーソルを置ける
 set virtualedit=block
 
-"アンダーラインを引く
-set cursorline
-highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
-
 "スクロール時の余白
 set scrolloff=3
 
