@@ -17,7 +17,8 @@ language C
 endif
 
 "カラースキーマを変える
-colorscheme desert
+"colorscheme desert
+colorscheme molokai
 
 "ツールバーを消す
 set guioptions-=T
