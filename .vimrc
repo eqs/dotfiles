@@ -61,12 +61,6 @@ if has("win32")
 	set imsearch=-1
 endif
 
-"カラースキーマmolokaiの設定
-set t_Co=256
-colorscheme molokai
-let g:molokai_original=1
-set background=dark
-
 "タブ幅の設定
 set shiftwidth=4
 set tabstop=4
