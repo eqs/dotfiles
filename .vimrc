@@ -169,6 +169,7 @@ if has("multi_lang")
 language C
 endif
 
+
 ""括弧の自動補完
 "inoremap { {}<LEFT>
 "inoremap ( ()<LEFT>
