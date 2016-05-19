@@ -18,7 +18,12 @@ endif
 
 "カラースキーマを変える
 "colorscheme desert
+
+"カラースキーマmolokaiの設定
+set t_Co=256
 colorscheme molokai
+let g:molokai_original=1
+set background=dark
 
 "ツールバーを消す
 set guioptions-=T
