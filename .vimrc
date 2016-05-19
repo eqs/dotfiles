@@ -35,8 +35,6 @@ NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 let g:airline_theme = 'dark'
 
-NeoBundle 'tomasr/molokai'
-
 "NeoBundle 'davidhalter/jedi-vim'
 
 call neobundle#end()
