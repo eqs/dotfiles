@@ -37,6 +37,8 @@ let g:airline_theme = 'dark'
 
 NeoBundle 'tomasr/molokai'
 
+NeoBundle 'vim-scripts/zoom.vim'
+
 "NeoBundle 'davidhalter/jedi-vim'
 
 call neobundle#end()
