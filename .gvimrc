@@ -44,7 +44,7 @@ match ZenkakuSpace /　/
 "beep音を切る，画面フラッシュも消す
 set vb t_vb=
 
-au GUIEnter * simalt ~x
+"au GUIEnter * simalt ~x
 
 " 印刷の設定
 set printfont=MigMix\ 1M:h11
