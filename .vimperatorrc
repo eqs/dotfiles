@@ -1,0 +1,23 @@
+
+"選択文字列のコピーを<C-c>に割り当てる
+map <C-c> Y
+
+"j/kでのスクロール幅を3行にする
+map j 3<C-e>
+map k 3<C-y>
+
+"h/lにタブ切り替えを割り当て
+map h <C-p>
+map l <C-n>
+
+"ヒントをアルファベットにする
+set hintchars=ifjklasdhguonmerwc
+
+"タイトルをFirefoxにする
+set titlestring=Firefox
+
+"Ctrl+[にESCを割り当て
+map <C-[> <ESC>
+
+hi Hint z-index:5000; font-family: MigMix 1M; font-size:16px; color:white; background-color:#00AAE6; border-width:0px; padding: 2px 4px 2px 4px; position:absolute; text-transform: uppercase;
+
