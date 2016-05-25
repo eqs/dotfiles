@@ -10,8 +10,14 @@ map k 3<C-y>
 map h <C-p>
 map l <C-n>
 
+"ヒントのキーを入れ替える
+nnoremap f F
+nnoremap F f
+
 "ヒントをアルファベットにする
 set hintchars=ifjklasdhguonmerwc
+"ヒントの表示を設定
+hi Hint z-index:5000; font-family: MigMix 1M; font-size:16px; color:white; background-color:#00AAE6; border-width:0px; padding: 2px 4px 2px 4px; position:absolute; text-transform: uppercase;
 
 "タイトルをFirefoxにする
 set titlestring=Firefox
@@ -19,5 +25,5 @@ set titlestring=Firefox
 "Ctrl+[にESCを割り当て
 map <C-[> <ESC>
 
-hi Hint z-index:5000; font-family: MigMix 1M; font-size:16px; color:white; background-color:#00AAE6; border-width:0px; padding: 2px 4px 2px 4px; position:absolute; text-transform: uppercase;
-
+"コマンドモード中はIMEを切る
+style! -name=commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
