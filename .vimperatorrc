@@ -27,3 +27,10 @@ map <C-[> <ESC>
 
 "コマンドモード中はIMEを切る
 style! -name=commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+
+"tabopenのときに表示するもの
+set complete=l
+
+"入力欄に自動フォーカスしない
+set focuscontent
+
