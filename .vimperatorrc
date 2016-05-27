@@ -34,3 +34,6 @@ set complete=l
 "入力欄に自動フォーカスしない
 set focuscontent
 
+"ナビゲーションバーを消す
+set gui=nonavigation
+
