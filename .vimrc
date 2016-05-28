@@ -124,6 +124,9 @@ nnoremap <C-l> <C-w>l
 noremap <Space>h ^
 noremap <Space>l $
 
+" ファイルの情報を表示
+nnoremap <C-g> 1<C-g>
+
 " sは使わない
 nnoremap s <Nop>
 
