@@ -121,6 +121,11 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+"Insertモード中でもhjklで移動する
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 " ^と$をSpace+hとSpace+lに割り当てる
 noremap <Space>h ^
 noremap <Space>l $
