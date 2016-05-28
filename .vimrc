@@ -113,6 +113,8 @@ set listchars=eol:$,tab:>\ ,trail:-,extends:<
 " 折り返されたテキストの上でいい感じに動く
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 " Ctrl + hjklでウインドウを移動する
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
