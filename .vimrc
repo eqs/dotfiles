@@ -124,6 +124,8 @@ nnoremap <C-l> <C-w>l
 " ^と$をSpace+hとSpace+lに割り当てる
 noremap <Space>h ^
 noremap <Space>l $
+" カンマの後ろにスペースを入れる
+inoremap , ,<Space>
 
 " ファイルの情報を表示
 nnoremap <C-g> 1<C-g>
