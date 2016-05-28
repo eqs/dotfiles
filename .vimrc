@@ -126,6 +126,14 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
+" sは使わない
+nnoremap s <Nop>
+" Window自体の移動
+nnoremap sj <C-w>J
+nnoremap sk <C-w>K
+nnoremap sh <C-w>H
+nnoremap sl <C-w>L
+nnoremap sr <C-w>L
 " ^と$をSpace+hとSpace+lに割り当てる
 noremap <Space>h ^
 noremap <Space>l $
@@ -134,9 +142,6 @@ inoremap , ,<Space>
 
 " ファイルの情報を表示
 nnoremap <C-g> 1<C-g>
-
-" sは使わない
-nnoremap s <Nop>
 
 " vを2回たたくと行末まで選択する
 vnoremap v $h
