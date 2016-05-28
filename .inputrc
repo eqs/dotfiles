@@ -1,0 +1,7 @@
+# Vi key-bind
+set editing-mode vi
+set keymap vi-command
+
+# タブで補完するときに大文字小文字を無視する
+set completion-ignore-case on
+
