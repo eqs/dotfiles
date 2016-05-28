@@ -58,10 +58,11 @@ if has("win32")
 	set termencoding=cp932
 	"PythonのDLL
 	let $PYTHON3_DLL="~/Miniconda35/python35.dll"
-	"標準でIMEをオフにする (起動時のデフォルトを全角入力にしない)
-	set iminsert=0
-	set imsearch=-1
 endif
+
+"標準でIMEをオフにする (起動時のデフォルトを全角入力にしない)
+set iminsert=0
+set imsearch=-1
 
 "タブ幅の設定
 set shiftwidth=4
