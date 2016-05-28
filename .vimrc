@@ -120,6 +120,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" ^と$をSpace+hとSpace+lに割り当てる
+noremap <Space>h ^
+noremap <Space>l $
 
 " sは使わない
 nnoremap s <Nop>
