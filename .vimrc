@@ -98,6 +98,8 @@ set nobackup
 set noswapfile
 "自動再読み込み
 set autoread
+"Undoファイルの場所を変更する
+set undodir=~/.vim/undotmp
 
 "正規表現をVery Magicに
 nnoremap / /\v
