@@ -39,6 +39,8 @@ NeoBundle 'tomasr/molokai'
 
 NeoBundle 'vim-scripts/zoom.vim'
 
+NeoBundle 'benmills/vimux'
+
 "NeoBundle 'davidhalter/jedi-vim'
 
 call neobundle#end()
