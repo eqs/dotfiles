@@ -177,6 +177,14 @@ set printheader=%t\ Page\ %N\ (%{strftime('%c')})%=
 set printoptions=wrap:y,number:y
 set printfont=MigMix\ 1M:h12
 
+command Hardcopy call Hardcopy()
+function! Hardcopy()
+    let colors_save = g:colors_name
+    colorscheme default
+    hardcopy
+    execute 'colorscheme' colors_save
+endfun
+
 "タブをスペース展開しない
 autocmd FileType tex,java,c,cs,cpp,h,hpp set noexpandtab
 
