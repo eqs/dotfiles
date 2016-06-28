@@ -14,14 +14,19 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-"Bundles
+" VimでProcessing書くためのやつ
 NeoBundle 'sophacles/vim-processing'
+" Pythonのpep8インデント
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['python', 'python3']}}
+" Vimをフルスクリーンにしたい
 NeoBundle 'lambdalisue/vim-fullscreen'
+" Vim上でIPython動かしたいときのやつ (キーバインドがよくない)
 "NeoBundle 'ivanov/vim-ipython'
 "NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'make -f make_mingw32.mak', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make', 'linux' : 'make', 'unix' : 'gmake'}}
 "NeoBundle 'Shougo/vimshell.vim'
+" VimでCSVをいい感じに開きたい
 NeoBundle 'chrisbra/csv.vim'
+" VimからGistに投げる
 NeoBundleLazy 'lambdalisue/vim-gista', {
             \ 'autoload': {
             \   'commands': ['Gista'],
@@ -29,19 +34,45 @@ NeoBundleLazy 'lambdalisue/vim-gista', {
             \   'unite_sources': 'gista',
             \}}
 
+" Vimでnim書くやつ
 NeoBundle 'zah/nimrod.vim'
 
+" かっこいい
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 let g:airline_theme = 'dark'
 
+" おしゃれカラースキーム
 NeoBundle 'tomasr/molokai'
 
+" フォントサイズを簡単にかえる
 NeoBundle 'vim-scripts/zoom.vim'
 
+" Vimをtmux風に使おうとした
 NeoBundle 'benmills/vimux'
 
-"NeoBundle 'davidhalter/jedi-vim'
+
+" テンプレート管理
+NeoBundle 'thinca/vim-template'
+" release autogroup in MyAutoCmd
+augroup MyAutoCmd
+    autocmd!
+augroup END
+" テンプレートの場所を指定する
+let g:template_basedir = '~/dotfiles/templates/'
+let g:template_files = 'template.*'
+let g:template_free_pattern = 'template'
+" テンプレート中に含まれる特定文字列を置換する
+autocmd MyAutoCmd User plugin-template-loaded call s:template_keywords()
+function! s:template_keywords()
+    silent! %s/<+DATE+>/\=strftime('%c')/g
+endfunction
+" テンプレート中に含まれる'<+CURSOR+>'にカーソルを移動する
+autocmd MyAutoCmd User plugin-template-loaded
+            \   if search('<+CURSOR+>')
+            \ |     silent! execute 'normal! "_da>'
+            \ | endif
+
 
 call neobundle#end()
 
@@ -105,11 +136,6 @@ set undodir=~/.vim/undotmp
 
 "正規表現をVery Magicに
 nnoremap / /\v
-
-"Pythonファイルを作るときはテンプレートを挿入
-autocmd BufNewFile *.py 0r ~/dotfiles/templates/python.txt
-"LaTeXファイルを作るときはテンプレートを挿入
-autocmd BufNewFile *.tex 0r ~/dotfiles/templates/latex.txt
 
 " 改行とかタブとかを表示する
 set list

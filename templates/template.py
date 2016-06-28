@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on 
+Created on <+DATE+>
 
+<+CURSOR+>
 
-
-@author: eqs
+@author: Satoshi Murashige
 """
 
 import sys
