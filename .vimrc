@@ -1,4 +1,9 @@
 
+" release autogroup in MyAutoCmd
+augroup MyAutoCmd
+    autocmd!
+augroup END
+
 if has('vim_starting')
     if &compatible
         set nocompatible
@@ -54,10 +59,6 @@ NeoBundle 'benmills/vimux'
 
 " テンプレート管理
 NeoBundle 'thinca/vim-template'
-" release autogroup in MyAutoCmd
-augroup MyAutoCmd
-    autocmd!
-augroup END
 " テンプレートの場所を指定する
 let g:template_basedir = '~/dotfiles/templates/'
 let g:template_files = 'template.*'
