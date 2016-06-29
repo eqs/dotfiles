@@ -142,6 +142,10 @@ nnoremap / /\v
 set list
 set listchars=eol:$,tab:>\ ,trail:_,extends:<
 
+" TABキーで対応ペアにジャンプする
+nnoremap <Tab> %
+vnoremap <Tab> %
+
 " 折り返されたテキストの上でいい感じに動く
 nnoremap j gj
 nnoremap k gk
