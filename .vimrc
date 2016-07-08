@@ -17,6 +17,9 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
 
+" setting shell
+set shell=bash\ -i
+
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 " VimでreStructuredTextを書くためのやつ
