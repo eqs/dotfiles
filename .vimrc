@@ -23,8 +23,9 @@ set shell=bash\ -i
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 " VimでreStructuredTextを書くためのやつ
-NeoBundle 'Rykka/riv'
+NeoBundle 'Rykka/riv.vim'
 NeoBundle 'Rykka/InstantRst'
+"NeoBundle 'Rykka/clickable.vim'
 
 " VimでProcessing書くためのやつ
 NeoBundle 'sophacles/vim-processing'
