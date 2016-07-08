@@ -21,6 +21,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 " VimでreStructuredTextを書くためのやつ
 NeoBundle 'Rykka/riv'
+NeoBundle 'Rykka/InstantRst'
+
 " VimでProcessing書くためのやつ
 NeoBundle 'sophacles/vim-processing'
 " Pythonのpep8インデント
@@ -57,7 +59,6 @@ NeoBundle 'vim-scripts/zoom.vim'
 
 " Vimをtmux風に使おうとした
 NeoBundle 'benmills/vimux'
-
 
 " テンプレート管理
 NeoBundle 'thinca/vim-template'
