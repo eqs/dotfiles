@@ -19,6 +19,8 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 
+" VimでreStructuredTextを書くためのやつ
+NeoBundle 'Rykka/riv'
 " VimでProcessing書くためのやつ
 NeoBundle 'sophacles/vim-processing'
 " Pythonのpep8インデント
@@ -221,6 +223,10 @@ autocmd FileType tex,java,c,cs,cpp,h,hpp set noexpandtab
 
 "Makefileではタブをスペース展開しない
 autocmd FileType make set noexpandtab
+
+" reStructuredTextではタブ幅を3文字にする
+autocmd FileType rst set tabstop=3
+autocmd FileType rst set shiftwidth=3
 
 "全角スペースを表示する
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
