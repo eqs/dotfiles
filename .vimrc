@@ -27,6 +27,8 @@ NeoBundle 'Rykka/riv.vim'
 NeoBundle 'Rykka/InstantRst'
 "NeoBundle 'Rykka/clickable.vim'
 
+let g:instant_rst_browser = 'firefox'
+
 " VimでProcessing書くためのやつ
 NeoBundle 'sophacles/vim-processing'
 " Pythonのpep8インデント
