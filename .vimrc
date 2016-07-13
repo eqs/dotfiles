@@ -29,14 +29,31 @@ NeoBundle 'Rykka/InstantRst'
 
 let g:instant_rst_browser = 'firefox'
 
+" Pythonの補完
+"NeoBundle 'Shougo/neocomplete/vim'
+"NeoBundle 'davidhalter/jedi-vim'
+"" setting =======================
+"autocmd FileType python setlocal omnifunc=jedi#completions
+"let g:jedi#completions_enabled = 0
+"let g:jedi#auto_vim_configulation = 0
+"if !exists('g:neocomplete#force_omni_input_patterns')
+"    let g:neocomplete#force_omni_input_patterns = {}
+"endif
+"
+"g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+"
+"" ===============================
+
+
 " VimでProcessing書くためのやつ
 NeoBundle 'sophacles/vim-processing'
 " Pythonのpep8インデント
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['python', 'python3']}}
 " Vimをフルスクリーンにしたい
 NeoBundle 'lambdalisue/vim-fullscreen'
+" VimとIPythonの連携
+NeoBundle 'ivanov/vim-ipython'
 " Vim上でIPython動かしたいときのやつ (キーバインドがよくない)
-"NeoBundle 'ivanov/vim-ipython'
 "NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'make -f make_mingw32.mak', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make', 'linux' : 'make', 'unix' : 'gmake'}}
 "NeoBundle 'Shougo/vimshell.vim'
 " VimでCSVをいい感じに開きたい
