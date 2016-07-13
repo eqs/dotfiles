@@ -4,6 +4,8 @@ augroup MyAutoCmd
     autocmd!
 augroup END
 
+let g:vimproc#download_windows_dll = 1
+
 if has('vim_starting')
     if &compatible
         set nocompatible
@@ -21,6 +23,23 @@ endif
 set shell=bash\ -i
 
 call neobundle#begin(expand('~/.vim/bundle/'))
+
+" quickrun
+NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'make -f make_mingw32.mak', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make', 'linux' : 'make', 'unix' : 'gmake'}}
+NeoBundleLazy 'thinca/vim-quickrun', {
+            \ "autoload" : {
+            \   "mappings" : [['nxo', '<Plug>(quickrun)']]
+            \ }}
+nmap <Leader>r <Plug>(quickrun)
+let s:hooks = neobundle#get_hooks("vim-quickrun")
+function! s:hooks.on_source(bundle)
+    let g:quickrun_config = {
+                \"_" : {"runner" : "remote/vimproc", 
+                \       "outputter/buffer/split" : ":botright", 
+                \       "outputter/buffer/close_on_empty" : 1, 
+                \       }, 
+                \ }
+endfunction
 
 " VimでreStructuredTextを書くためのやつ
 NeoBundle 'Rykka/riv.vim'
@@ -54,7 +73,6 @@ NeoBundle 'lambdalisue/vim-fullscreen'
 " VimとIPythonの連携
 NeoBundle 'ivanov/vim-ipython'
 " Vim上でIPython動かしたいときのやつ (キーバインドがよくない)
-"NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'make -f make_mingw32.mak', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make', 'linux' : 'make', 'unix' : 'gmake'}}
 "NeoBundle 'Shougo/vimshell.vim'
 " VimでCSVをいい感じに開きたい
 NeoBundle 'chrisbra/csv.vim'
