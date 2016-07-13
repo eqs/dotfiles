@@ -20,7 +20,11 @@ if has('vim_starting')
 endif
 
 " setting shell
-set shell=bash\ -i
+if has('win64')
+    set shell=cmd
+elseif has('unix')
+    set shell=bash\ -i
+endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 
@@ -38,6 +42,7 @@ function! s:hooks.on_source(bundle)
                 \       'runner' : 'remote/vimproc', 
                 \       'outputter/buffer/split' : ':botright', 
                 \       'outputter/buffer/close_on_empty' : 1, 
+                \       'exec' : "%c %s"
                 \       }, 
                 \'tex' : {
                 \       'command' : 'latexmk', 
