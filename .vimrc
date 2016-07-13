@@ -27,17 +27,21 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " quickrun
 NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'make -f make_mingw32.mak', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make', 'linux' : 'make', 'unix' : 'gmake'}}
 NeoBundleLazy 'thinca/vim-quickrun', {
-            \ "autoload" : {
-            \   "mappings" : [['nxo', '<Plug>(quickrun)']]
+            \ 'autoload' : {
+            \   'mappings' : [['nxo', '<Plug>(quickrun)']]
             \ }}
 nmap <Leader>r <Plug>(quickrun)
-let s:hooks = neobundle#get_hooks("vim-quickrun")
+let s:hooks = neobundle#get_hooks('vim-quickrun')
 function! s:hooks.on_source(bundle)
     let g:quickrun_config = {
-                \"_" : {"runner" : "remote/vimproc", 
-                \       "outputter/buffer/split" : ":botright", 
-                \       "outputter/buffer/close_on_empty" : 1, 
+                \'_' : {
+                \       'runner' : 'remote/vimproc', 
+                \       'outputter/buffer/split' : ':botright', 
+                \       'outputter/buffer/close_on_empty' : 1, 
                 \       }, 
+                \'tex' : {
+                \       'command' : 'latexmk', 
+                \       'cmdopt' : '-pv'
                 \ }
 endfunction
 
