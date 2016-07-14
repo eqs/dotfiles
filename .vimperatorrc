@@ -1,6 +1,6 @@
 
 "jupyter-vim-bindingのために無効化
-map <S-ESC> <Nop>
+map <S-ESC> <C-[>
 
 "選択文字列のコピーを<C-c>に割り当てる
 map <C-c> Y
