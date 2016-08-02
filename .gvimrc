@@ -51,4 +51,5 @@ set vb t_vb=
 set printfont=MigMix\ 1M:h11
 
 "背景を半透明にする
-autocmd GUIEnter * set transparency=220
+autocmd GUIEnter * set transparency=240
+
