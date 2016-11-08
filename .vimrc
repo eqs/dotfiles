@@ -50,6 +50,9 @@ function! s:hooks.on_source(bundle)
                 \ }
 endfunction
 
+"爆速HTMLコーディング
+NeoBundle 'mattn/emmet-vim'
+
 " VimでreStructuredTextを書くためのやつ
 NeoBundle 'Rykka/riv.vim'
 NeoBundle 'Rykka/InstantRst'
