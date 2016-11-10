@@ -50,6 +50,9 @@ function! s:hooks.on_source(bundle)
                 \ }
 endfunction
 
+"Markdownのプレビュー
+NeoBundle 'kannokanno/previm'
+
 "爆速HTMLコーディング
 NeoBundle 'mattn/emmet-vim'
 
