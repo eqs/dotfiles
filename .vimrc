@@ -48,10 +48,13 @@ function! s:hooks.on_source(bundle)
                 \       'command' : 'latexmk', 
                 \       'cmdopt' : '-pv'
                 \ }
+    }
 endfunction
 
 "Markdownのプレビュー
 NeoBundle 'kannokanno/previm'
+let g:previm_open_cmd = 'firefox'
+let g:previm_enable_realtime = 1
 
 "爆速HTMLコーディング
 NeoBundle 'mattn/emmet-vim'
