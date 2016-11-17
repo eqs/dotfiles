@@ -312,3 +312,15 @@ endif
 ""LaTeX書くときだけインライン数式も補完する
 "autocmd FileType tex inoremap $ $$<LEFT>
 
+" Windows以外の設定
+if !has("win32")
+    colorscheme molokai
+
+    "アンダーラインを引く
+    set cursorline
+    highlight CursorLine gui=underline guifg=NONE guibg=NONE
+
+    "全角スペースを表示する
+    highlight ZenkakuSpace gui=underline guifg=lightblue guibg=darkgray
+    match ZenkakuSpace /　/
+endif
