@@ -67,20 +67,36 @@ NeoBundle 'Rykka/InstantRst'
 let g:instant_rst_browser = 'firefox'
 
 " Pythonの補完
-"NeoBundle 'Shougo/neocomplete/vim'
-"NeoBundle 'davidhalter/jedi-vim'
-"" setting =======================
-"autocmd FileType python setlocal omnifunc=jedi#completions
-"let g:jedi#completions_enabled = 0
-"let g:jedi#auto_vim_configulation = 0
-"if !exists('g:neocomplete#force_omni_input_patterns')
-"    let g:neocomplete#force_omni_input_patterns = {}
-"endif
-"
-"g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
-"
-"" ===============================
+NeoBundle 'Shougo/neocomplete/vim'
+NeoBundle 'davidhalter/jedi-vim'
 
+if !empty(neobundle#get("jedi-vim"))
+    let g:jedi#auto_initialization = 1
+    let g:jedi#auto_vim_configuration = 1
+
+    nnoremap [jedi] <Nop>
+    xnoremap [jedi] <Nop>
+    nmap <Leader>j [jedi]
+    xmap <Leader>j [jedi]
+
+    let g:jedi#completions_command = "<C-Space>"
+    let g:jedi#goto_assignments_command = "<C-g>"
+    let g:jedi#goto_definitions_command = "<C-d>"
+    let g:jedi#documentation_command = "<C-k>"
+    let g:jedi#rename_command = "[jedi]r"
+    let g:jedi#usages_command = "[jedi]n"
+    let g:jedi#popup_select_first = 0
+    let g:jedi#popup_on_dot = 0
+
+    autocmd FileType python setlocal completeopt-=preview
+
+    if !empty(neobundle#get("neocomplete.vim"))
+        autocmd FileType python setlocal omnifunc=jedi#completions
+        let g:jedi#completions_enabled=0
+        let g:jedi#auto_vim_configuration = 0
+        let g:neocomplete#force_omni_input_patterns.python = '%([^. t].|^s*@|^s*froms.+import |^s*from |^s*import )w*'
+    endif
+endif
 
 " VimでProcessing書くためのやつ
 NeoBundle 'sophacles/vim-processing'
