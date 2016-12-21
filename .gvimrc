@@ -18,7 +18,7 @@ endif
 
 "カラースキーマを変える
 "colorscheme desert
-colorscheme molokai
+colorscheme iceberg
 
 "ツールバーを消す
 set guioptions-=T

@@ -129,6 +129,9 @@ let g:airline_theme = 'dark'
 " おしゃれカラースキーム
 NeoBundle 'tomasr/molokai'
 
+" おしゃれカラースキーム
+NeoBundle 'cocopon/iceberg.vim'
+
 " フォントサイズを簡単にかえる
 NeoBundle 'vim-scripts/zoom.vim'
 
@@ -330,8 +333,7 @@ endif
 
 " Windows以外の設定
 if !has("win32")
-    colorscheme molokai
-
+    colorscheme iceberg
     "アンダーラインを引く
     set cursorline
     highlight CursorLine gui=underline guifg=NONE guibg=NONE
