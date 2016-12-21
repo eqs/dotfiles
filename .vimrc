@@ -342,3 +342,10 @@ if !has("win32")
     highlight ZenkakuSpace gui=underline guifg=lightblue guibg=darkgray
     match ZenkakuSpace /　/
 endif
+
+" molokai setting for bash on win
+if &term == "xterm-256color"
+    colorscheme molokai
+    hi Comment ctermfg=102
+    hi Visual ctermbg=236
+endif
