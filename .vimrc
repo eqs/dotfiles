@@ -51,6 +51,9 @@ function! s:hooks.on_source(bundle)
     }
 endfunction
 
+"Swift Syntax Highlighting
+NeoBundle 'keith/swift.vim'
+
 "Markdownのプレビュー
 NeoBundle 'kannokanno/previm'
 let g:previm_open_cmd = 'firefox'
