@@ -333,7 +333,7 @@ endif
 
 " Windows以外の設定
 if !has("win32")
-    colorscheme iceberg
+    colorscheme molokai
     "アンダーラインを引く
     set cursorline
     highlight CursorLine gui=underline guifg=NONE guibg=NONE
