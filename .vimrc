@@ -101,6 +101,8 @@ if !empty(neobundle#get("jedi-vim"))
     endif
 endif
 
+NeoBundleDisable jedi-vim
+
 " VimでProcessing書くためのやつ
 NeoBundle 'sophacles/vim-processing'
 " Pythonのpep8インデント
