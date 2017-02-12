@@ -59,6 +59,10 @@ NeoBundle 'kannokanno/previm'
 let g:previm_open_cmd = 'firefox'
 let g:previm_enable_realtime = 1
 
+"TeC7アセンブラのシンタックス
+NeoBundle 'https://bitbucket.org/k5342/tec7.vim'
+au BufNewFile, BufRead *.t7 setlocal tabstop=8 shiftwidth=8 filetype=tec7
+
 "爆速HTMLコーディング
 NeoBundle 'mattn/emmet-vim'
 
