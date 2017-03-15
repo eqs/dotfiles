@@ -55,9 +55,9 @@ endfunction
 NeoBundle 'keith/swift.vim'
 
 "Markdownのプレビュー
-NeoBundle 'kannokanno/previm'
-let g:previm_open_cmd = 'firefox'
-let g:previm_enable_realtime = 1
+"NeoBundle 'kannokanno/previm'
+"let g:previm_open_cmd = 'firefox'
+"let g:previm_enable_realtime = 1
 
 "TeC7アセンブラのシンタックス
 NeoBundle 'https://bitbucket.org/k5342/tec7.vim'
