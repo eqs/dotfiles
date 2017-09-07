@@ -61,7 +61,10 @@ NeoBundle 'keith/swift.vim'
 
 "TeC7アセンブラのシンタックス
 NeoBundle 'https://bitbucket.org/k5342/tec7.vim'
-au BufNewFile, BufRead *.t7 setlocal tabstop=8 shiftwidth=8 filetype=tec7
+au BufNewFile,BufRead *.t7 setlocal tabstop=8 shiftwidth=8 filetype=tec7
+
+"C--言語
+au BufNewFile,BufRead *.cmm setlocal filetype=cpp
 
 "爆速HTMLコーディング
 NeoBundle 'mattn/emmet-vim'
