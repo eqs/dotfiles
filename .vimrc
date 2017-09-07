@@ -66,6 +66,9 @@ au BufNewFile, BufRead *.t7 setlocal tabstop=8 shiftwidth=8 filetype=tec7
 "爆速HTMLコーディング
 NeoBundle 'mattn/emmet-vim'
 
+" ejs
+au BufNewFile, BufRead *.ejs setlocal filetype=html
+
 " VimでreStructuredTextを書くためのやつ
 "NeoBundle 'Rykka/riv.vim'
 "NeoBundle 'Rykka/InstantRst'
