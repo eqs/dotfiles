@@ -69,6 +69,9 @@ au BufNewFile,BufRead *.cmm setlocal filetype=cpp
 "爆速HTMLコーディング
 NeoBundle 'mattn/emmet-vim'
 
+" ejs
+au BufNewFile, BufRead *.ejs setlocal filetype=html
+
 " VimでreStructuredTextを書くためのやつ
 "NeoBundle 'Rykka/riv.vim'
 "NeoBundle 'Rykka/InstantRst'
