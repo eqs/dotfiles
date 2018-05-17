@@ -1,4 +1,3 @@
-
 " release autogroup in MyAutoCmd
 augroup MyAutoCmd
     autocmd!
@@ -10,13 +9,15 @@ if has('vim_starting')
     if &compatible
         set nocompatible
     endif
-    " neobundleがなければ自動インストール
-    if !isdirectory(expand("~/.vim/bundle/neobundle.vim"))
-        echo "installing neobundle ... "
-        :call system("git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
-    endif
 
-    set runtimepath+=~/.vim/bundle/neobundle.vim
+    " neobundleがなければ自動インストール
+    if !isdirectory(expand("~/.vim/dein/repos/github.com/Shougo/dein.vim"))
+        echo "installing dein ... "
+        :call system("mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim")
+        :call system("git clone https://github.com/Shougo/dein.vim.git ~/.vim/dein/repos/github.com/Shougo/dein.vim")
+    endif
+    
+    set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 endif
 
 " setting shell
@@ -26,135 +27,35 @@ elseif has('unix')
     set shell=bash\ -i
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
 
-" quickrun
-NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'make -f make_mingw32.mak', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make', 'linux' : 'make', 'unix' : 'gmake'}}
-NeoBundleLazy 'thinca/vim-quickrun', {
-            \ 'autoload' : {
-            \   'mappings' : [['nxo', '<Plug>(quickrun)']]
-            \ }}
-nmap <Leader>r <Plug>(quickrun)
-let s:hooks = neobundle#get_hooks('vim-quickrun')
-function! s:hooks.on_source(bundle)
-    let g:quickrun_config = {
-                \'_' : {
-                \       'runner' : 'remote/vimproc', 
-                \       'outputter/buffer/split' : ':botright', 
-                \       'outputter/buffer/close_on_empty' : 1, 
-                \       'exec' : "%c %s"
-                \       }, 
-                \'tex' : {
-                \       'command' : 'latexmk', 
-                \       'cmdopt' : '-pv'
-                \ }
-    }
-endfunction
+call dein#begin(expand('~/.vim/dein'))
 
-"Swift Syntax Highlighting
-NeoBundle 'keith/swift.vim'
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
-"Markdownのプレビュー
-"NeoBundle 'kannokanno/previm'
-"let g:previm_open_cmd = 'firefox'
-"let g:previm_enable_realtime = 1
-
-"TeC7アセンブラのシンタックス
-NeoBundle 'https://bitbucket.org/k5342/tec7.vim'
-au BufNewFile,BufRead *.t7 setlocal tabstop=8 shiftwidth=8 filetype=tec7
-
-"C--言語
-au BufNewFile,BufRead *.cmm setlocal filetype=cpp
+call dein#add('Shougo/deomplete.vim')
+call dein#add('Shougo/denite.vim')
 
 "爆速HTMLコーディング
-NeoBundle 'mattn/emmet-vim'
-
-" ejs
-au BufNewFile, BufRead *.ejs setlocal filetype=html
-
-" VimでreStructuredTextを書くためのやつ
-"NeoBundle 'Rykka/riv.vim'
-"NeoBundle 'Rykka/InstantRst'
-"NeoBundle 'Rykka/clickable.vim'
-
-"let g:instant_rst_browser = 'firefox'
-
-" Pythonの補完
-"NeoBundle 'Shougo/neocomplete/vim'
-"NeoBundle 'davidhalter/jedi-vim'
-"
-"if !empty(neobundle#get("jedi-vim"))
-"    let g:jedi#auto_initialization = 1
-"    let g:jedi#auto_vim_configuration = 1
-"
-"    nnoremap [jedi] <Nop>
-"    xnoremap [jedi] <Nop>
-"    nmap <Leader>j [jedi]
-"    xmap <Leader>j [jedi]
-"
-"    let g:jedi#completions_command = "<C-Space>"
-"    let g:jedi#goto_assignments_command = "<C-g>"
-"    let g:jedi#goto_definitions_command = "<C-d>"
-"    let g:jedi#documentation_command = "<C-k>"
-"    let g:jedi#rename_command = "[jedi]r"
-"    let g:jedi#usages_command = "[jedi]n"
-"    let g:jedi#popup_select_first = 0
-"    let g:jedi#popup_on_dot = 0
-"
-"    autocmd FileType python setlocal completeopt-=preview
-"
-"    if !empty(neobundle#get("neocomplete.vim"))
-"        autocmd FileType python setlocal omnifunc=jedi#completions
-"        let g:jedi#completions_enabled=0
-"        let g:jedi#auto_vim_configuration = 0
-"        let g:neocomplete#force_omni_input_patterns.python = '%([^. t].|^s*@|^s*froms.+import |^s*from |^s*import )w*'
-"    endif
-"endif
-"
-"NeoBundleDisable jedi-vim
-
+call dein#add('mattn/emmet-vim')
 " VimでProcessing書くためのやつ
-NeoBundle 'sophacles/vim-processing'
+call dein#add('sophacles/vim-processing')
 " Pythonのpep8インデント
-NeoBundleLazy 'hynek/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['python', 'python3']}}
-" Vimをフルスクリーンにしたい
-NeoBundle 'lambdalisue/vim-fullscreen'
-" VimとIPythonの連携
-NeoBundle 'ivanov/vim-ipython'
-" Vim上でIPython動かしたいときのやつ (キーバインドがよくない)
-"NeoBundle 'Shougo/vimshell.vim'
-" VimでCSVをいい感じに開きたい
-NeoBundle 'chrisbra/csv.vim'
-" VimからGistに投げる
-NeoBundleLazy 'lambdalisue/vim-gista', {
-            \ 'autoload': {
-            \   'commands': ['Gista'],
-            \   'mappings': '<Plug>(gista-',
-            \   'unite_sources': 'gista',
-            \}}
-
-" Vimでnim書くやつ
-NeoBundle 'zah/nimrod.vim'
-
+call dein#add('hynek/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['python', 'python3']}})
 " かっこいい
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
 let g:airline_theme = 'dark'
 
 " おしゃれカラースキーム
-NeoBundle 'tomasr/molokai'
-
+call dein#add('tomasr/molokai')
 " おしゃれカラースキーム
-NeoBundle 'cocopon/iceberg.vim'
-
+call dein#add('cocopon/iceberg.vim')
 " フォントサイズを簡単にかえる
-NeoBundle 'vim-scripts/zoom.vim'
+call dein#add('vim-scripts/zoom.vim')
 
-" Vimをtmux風に使おうとした
-NeoBundle 'benmills/vimux'
-
-" テンプレート管理
-NeoBundle 'thinca/vim-template'
+" " テンプレート管理
+call dein#add('thinca/vim-template')
 " テンプレートの場所を指定する
 let g:template_basedir = '~/dotfiles/templates/'
 let g:template_files = 'template.*'
@@ -171,24 +72,13 @@ autocmd MyAutoCmd User plugin-template-loaded
             \ | endif
 
 
-call neobundle#end()
+call dein#end()
 
-filetype plugin indent on
-
-"vim-gistaで使うユーザネーム
-let g:gista#client#default_username = 'eqs'
-
-let g:tex_flavor = 'tex'
+" ejs
+au BufNewFile, BufRead *.ejs setlocal filetype=html
 
 "エンコーディング指定
 set encoding=utf-8
-
-if has("win32")
-	"ターミナルでのエンコーディング
-	set termencoding=cp932
-	"PythonのDLL
-	let $PYTHON3_DLL="~/Miniconda35/python35.dll"
-endif
 
 "標準でIMEをオフにする (起動時のデフォルトを全角入力にしない)
 set iminsert=0
@@ -292,10 +182,6 @@ nnoremap tn gt
 " 前のタブ
 nnoremap tp gT
 
-" IPythonを非同期で実行する
-command! IPythonh :VimShellInteractive --split=split ipython
-command! IPythonv :VimShellInteractive --split=vsplit ipython
-
 " 80文字目に線をいれる
 set colorcolumn=80
 
@@ -334,17 +220,6 @@ source $VIMRUNTIME/menu.vim
 if has("multi_lang")
 language C
 endif
-
-
-""括弧の自動補完
-"inoremap { {}<LEFT>
-"inoremap ( ()<LEFT>
-"inoremap [ []<LEFT>
-"inoremap } <RIGHT>
-"inoremap ) <RIGHT>
-"inoremap ] <RIGHT>
-""LaTeX書くときだけインライン数式も補完する
-"autocmd FileType tex inoremap $ $$<LEFT>
 
 " Windows以外の設定
 if !has("win32")
