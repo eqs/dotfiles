@@ -33,8 +33,8 @@ call dein#begin(expand('~/.vim/dein'))
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
-call dein#add('Shougo/deomplete.vim')
-call dein#add('Shougo/denite.vim')
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('Shougo/denite.nvim')
 
 "爆速HTMLコーディング
 call dein#add('mattn/emmet-vim')
@@ -53,6 +53,15 @@ call dein#add('tomasr/molokai')
 call dein#add('cocopon/iceberg.vim')
 " フォントサイズを簡単にかえる
 call dein#add('vim-scripts/zoom.vim')
+
+" GLSL
+call dein#add('tikhomirov/vim-glsl')
+" in your .vimrc (_vimrc for Windows)
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
+
+" Julia
+call dein#add('JuliaEditorSupport/julia-vim')
+let g:latex_to_unicode_auto = 1
 
 " " テンプレート管理
 call dein#add('thinca/vim-template')
