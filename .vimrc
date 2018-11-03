@@ -63,6 +63,9 @@ autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
 call dein#add('JuliaEditorSupport/julia-vim')
 let g:latex_to_unicode_auto = 1
 
+" Stan
+call dein#add('maverickg/stan.vim')
+
 " " テンプレート管理
 call dein#add('thinca/vim-template')
 " テンプレートの場所を指定する
