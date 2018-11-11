@@ -36,6 +36,10 @@ call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('Shougo/denite.nvim')
 
+" Pythonの補完
+call dein#add('davidhalter/jedi-vim')
+
+
 "爆速HTMLコーディング
 call dein#add('mattn/emmet-vim')
 " VimでProcessing書くためのやつ
