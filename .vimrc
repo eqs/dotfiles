@@ -45,7 +45,7 @@ call dein#add('mattn/emmet-vim')
 " VimでProcessing書くためのやつ
 call dein#add('sophacles/vim-processing')
 " Pythonのpep8インデント
-call dein#add('hynek/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['python', 'python3']}})
+call dein#add('Vimjas/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['python', 'python3']}})
 " かっこいい
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
