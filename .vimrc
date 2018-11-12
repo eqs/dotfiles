@@ -37,7 +37,10 @@ call dein#add('Shougo/deoplete.nvim')
 call dein#add('Shougo/denite.nvim')
 
 " Pythonの補完
-call dein#add('davidhalter/jedi-vim')
+call dein#add('davidhalter/jedi-vim', {
+    \ "autoload" : {
+    \   "filetypes" : ['python']
+    \}})
 
 
 "爆速HTMLコーディング
@@ -45,7 +48,10 @@ call dein#add('mattn/emmet-vim')
 " VimでProcessing書くためのやつ
 call dein#add('sophacles/vim-processing')
 " Pythonのpep8インデント
-call dein#add('Vimjas/vim-python-pep8-indent', {"autoload" : {"filetypes" : ['python', 'python3']}})
+call dein#add('Vimjas/vim-python-pep8-indent', {
+    \ "autoload" : {
+    \   "filetypes" : ['python']
+    \}})
 " かっこいい
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
@@ -89,6 +95,10 @@ autocmd MyAutoCmd User plugin-template-loaded
 
 
 call dein#end()
+
+" filetype別のプラグイン/インデントを有効にする
+filetype plugin indent on
+
 
 " ejs
 au BufNewFile, BufRead *.ejs setlocal filetype=html
