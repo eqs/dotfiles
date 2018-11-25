@@ -66,6 +66,9 @@ let g:latex_to_unicode_auto = 1
 " Stan
 call dein#add('maverickg/stan.vim')
 
+" Vue.js
+call dein#add('posva/vim-vue')
+
 " " テンプレート管理
 call dein#add('thinca/vim-template')
 " テンプレートの場所を指定する
