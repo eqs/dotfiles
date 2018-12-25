@@ -37,10 +37,10 @@ call dein#add('Shougo/deoplete.nvim')
 call dein#add('Shougo/denite.nvim')
 
 " Pythonの補完
-call dein#add('davidhalter/jedi-vim', {
-    \ "autoload" : {
-    \   "filetypes" : ['python']
-    \}})
+" call dein#add('davidhalter/jedi-vim', {
+"     \ "autoload" : {
+"     \   "filetypes" : ['python']
+"     \}})
 
 
 "爆速HTMLコーディング
