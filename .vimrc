@@ -135,6 +135,18 @@ set backspace=start,eol,indent
 "beep音を切る，画面フラッシュも消す
 set vb t_vb=
 
+
+"ファイルツリーに関する設定
+
+"上に出てくる表示を消す
+let g:netrw_banner = 0
+"Treeview
+let g:netrw_liststyle = 3
+"左右分割を右側に開く
+let g:netrw_altv = 1
+"サイズを85%に
+let g:netrw_winsize = 85
+
 "Ctrl-vの矩形選択で，行末より後ろにカーソルを置ける
 set virtualedit=block
 
