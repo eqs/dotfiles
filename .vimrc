@@ -34,7 +34,27 @@ call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
 call dein#add('Shougo/deoplete.nvim')
+if !has('nvim')
+    let s:dein_home_dir = expand('~/.nvim/dein')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+let g:deoplete#enable_at_startup = 1
+
+" Autocomplete for Javascript
+call dein#add('wokalski/autocomplete-flow')
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
+let g:neosnippet#enable_completed_snippet = 1
+
 call dein#add('Shougo/denite.nvim')
+
+" Pythonの補完
+call dein#add('zchee/deoplete-jedi', {
+    \ "autoload" : {
+    \   "filetypes" : ['python']
+    \}})
+let g:deoplete#sources#jedi#python_path='C:/Users/chikuwa/Anaconda36/python'
 
 " Pythonの補完
 " call dein#add('davidhalter/jedi-vim', {
