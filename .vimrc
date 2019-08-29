@@ -99,6 +99,9 @@ call dein#add('maverickg/stan.vim')
 " Vue.js
 call dein#add('posva/vim-vue')
 
+" API Blueprint
+call dein#add('kylef/apiblueprint.vim')
+
 " " テンプレート管理
 call dein#add('thinca/vim-template')
 " テンプレートの場所を指定する
