@@ -62,6 +62,11 @@ let g:deoplete#sources#jedi#python_path='C:/Users/chikuwa/Anaconda36/python'
 "     \   "filetypes" : ['python']
 "     \}})
 
+" TypeScript
+call dein#add('leafgarland/typescript-vim')
+
+" Trailing
+call dein#add('bronson/vim-trailing-whitespace')
 
 "爆速HTMLコーディング
 call dein#add('mattn/emmet-vim')
