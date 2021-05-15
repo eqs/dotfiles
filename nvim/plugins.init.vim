@@ -129,6 +129,7 @@ function! MyTex2imgRunner(src)
 
     call writefile(src, tmp)
     let res = system("tex2imgc /transparent /embed-source /quiet /margins=8 " . tmp . " " . out)
+    call delete(tmp)
     return res
 endfunction
 
