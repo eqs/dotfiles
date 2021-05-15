@@ -125,7 +125,7 @@ function! MyTex2imgRunner(src)
             \. "\n\\end{document}\n", "\n")
 
     call writefile(src, tmp)
-    let res = system("tex2imgc /transparent /embed-source /quiet " . tmp . " " . out)
+    let res = system("tex2imgc /transparent /embed-source /quiet /margins=8 " . tmp . " " . out)
     return res
 endfunction
 
