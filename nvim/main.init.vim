@@ -1,9 +1,3 @@
-" filetype別のプラグイン/インデントを有効にする
-filetype plugin indent on
-
-" ejs
-au BufNewFile, BufRead *.ejs setlocal filetype=html
-
 "エンコーディング指定
 set encoding=utf-8
 
