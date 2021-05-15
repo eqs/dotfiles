@@ -26,3 +26,8 @@ source $VIMRUNTIME/menu.vim
 if has("multi_lang")
     language C
 endif
+
+" マウスの設定
+set mouse=ar
+set mousemodel=popup
+
