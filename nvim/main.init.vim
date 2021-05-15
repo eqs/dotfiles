@@ -54,11 +54,6 @@ set autoread
 "Undoファイルの場所を変更する
 set undodir=~/.vim/undotmp
 
-" 改行とかタブとかを表示する
-set list
-set listchars=eol:$,tab:>\ ,trail:_,extends:<
-
-
 "タブをスペース展開しない
 autocmd FileType tex,java,c,cs,cpp,h,hpp set noexpandtab
 
@@ -68,22 +63,6 @@ autocmd FileType make set noexpandtab
 " reStructuredTextではタブ幅を3文字にする
 autocmd FileType rst set tabstop=3
 autocmd FileType rst set shiftwidth=3
-
-"全角スペースを表示する
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
-match ZenkakuSpace /　/
-
-" 80文字目に線をいれる
-set colorcolumn=80
-
-"メニューを英語にする
-source $VIMRUNTIME/delmenu.vim
-"set langmenu=ja_jp.utf-8
-set langmenu=none
-source $VIMRUNTIME/menu.vim
-if has("multi_lang")
-    language C
-endif
 
 " ##########################################################################
 
