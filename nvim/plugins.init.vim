@@ -98,3 +98,45 @@ filetype plugin indent on
 autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
 autocmd FileType markdown nnoremap <buffer> <Leader>r :MarkdownRunner<CR>
 autocmd FileType markdown nnoremap <buffer> <Leader>R :MarkdownRunnerInsert<CR>
+
+function! MyTex2imgRunner(src)
+    let tmp = tempname() . ".tex"
+    let src = a:src
+
+    " コードの最初にコメントとして挿入されているファイル名を取得する
+    " 無ければ`_output.svg`が標準のファイル名になる
+    let matched = matchlist(src[0], "^\%\\s*\\(.*\.\\(svg\\|pdf\\|png\\)\\)")
+    if len(matched) >= 2
+        let out = matched[1]
+    else
+        let out = "_output.svg"
+    endif
+
+    " tex2imgに突っ込むコードを生成する
+    let joined_src = join(src[1:], "\n")
+    let src = split(
+            \ "\\documentclass[fleqn,papersize,dvipdfmx]{jsarticle}\n"
+            \. "\\usepackage{tikz,graphicx}\n"
+            \. "\\usepackage{amsmath,amssymb}\n"
+            \. "\\usepackage{color}\n"
+            \. "\\pagestyle{empty}\n"
+            \. "\\begin{document}\n"
+            \. joined_src
+            \. "\n\\end{document}\n", "\n")
+
+    call writefile(src, tmp)
+    let res = system("tex2imgc /transparent /embed-source /quiet " . tmp . " " . out)
+    return res
+endfunction
+
+if !exists("g:markdown_runners")
+    let g:markdown_runners = {
+                \ '': getenv('SHELL'),
+                \ 'go': function("markdown_runner#RunGoBlock"),
+                \ 'js': 'node',
+                \ 'javascript': 'node',
+                \ 'vim': function("markdown_runner#RunVimBlock"),
+                \ 'tex2img': function('MyTex2imgRunner')
+                \ }
+endif
+
