@@ -15,11 +15,11 @@ if has('vim_starting')
 endif
 
 let g:dein#install_max_processes = 16
-"let g:dein#install_message_type = 'none'
+let g:dein#install_message_type = 'echo'
 
 if dein#load_state(s:dein_dir)
 
-    call dein#begin(expand(s:dein_dir))
+    call dein#begin(s:dein_dir)
 
     call dein#add('Shougo/dein.vim')
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
