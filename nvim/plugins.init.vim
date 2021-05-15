@@ -96,6 +96,9 @@ endif
 filetype plugin indent on
 
 autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
+
+nnoremap <Leader>f :FixWhitespace<CR>
+
 autocmd FileType markdown nnoremap <buffer> <Leader>r :MarkdownRunner<CR>
 autocmd FileType markdown nnoremap <buffer> <Leader>R :MarkdownRunnerInsert<CR>
 
