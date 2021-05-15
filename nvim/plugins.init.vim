@@ -61,7 +61,6 @@ if dein#load_state(s:dein_dir)
     " GLSL
     call dein#add('tikhomirov/vim-glsl')
     " in your .vimrc (_vimrc for Windows)
-    autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
 
     " Julia
     call dein#add('JuliaEditorSupport/julia-vim')
@@ -96,3 +95,6 @@ endif
 " filetype別のプラグイン/インデントを有効にする
 filetype plugin indent on
 
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
+autocmd FileType markdown nnoremap <buffer> <Leader>r :MarkdownRunner<CR>
+autocmd FileType markdown nnoremap <buffer> <Leader>R :MarkdownRunnerInsert<CR>
