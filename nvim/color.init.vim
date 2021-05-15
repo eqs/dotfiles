@@ -10,7 +10,7 @@ match ZenkakuSpace /　/
 
 "アンダーラインを引く
 set cursorline
-highlight CursorLine gui=underline guifg=NONE guibg=NON
+highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
 " 80文字目に線をいれる
 set colorcolumn=80
@@ -23,4 +23,3 @@ source $VIMRUNTIME/menu.vim
 if has("multi_lang")
     language C
 endif
-
