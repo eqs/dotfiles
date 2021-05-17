@@ -5,6 +5,9 @@ set encoding=utf-8
 set iminsert=0
 set imsearch=-1
 
+"クリップボード
+set clipboard=unnamed
+
 "タブ幅の設定
 set shiftwidth=4
 set tabstop=4
