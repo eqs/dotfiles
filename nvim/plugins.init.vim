@@ -24,14 +24,6 @@ if dein#load_state(s:dein_dir)
     call dein#add('Shougo/dein.vim')
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
-    call dein#add('Shougo/deoplete.nvim')
-    if !has('nvim')
-        let s:dein_home_dir = expand(s:dein_dir)
-        call dein#add('roxma/nvim-yarp')
-        call dein#add('roxma/vim-hug-neovim-rpc')
-    endif
-    let g:deoplete#enable_at_startup = 1
-
     call dein#add('wokalski/autocomplete-flow')
     call dein#add('Shougo/neosnippet')
     call dein#add('Shougo/neosnippet-snippets')
@@ -39,7 +31,21 @@ if dein#load_state(s:dein_dir)
 
     call dein#add('Shougo/denite.nvim')
 
+    " vim-quickrun
+
+    call dein#add('thinca/vim-quickrun')
+    call dein#add('lambdalisue/vim-quickrun-neovim-job')
+
     " プログラミング言語 ##################################################
+
+    call dein#add('Shougo/deoplete.nvim')
+    if !has('nvim')
+        let s:dein_home_dir = expand(s:dein_dir)
+        call dein#add('roxma/nvim-yarp')
+        call dein#add('roxma/vim-hug-neovim-rpc')
+    endif
+
+    let g:deoplete#enable_at_startup = 1
 
     call dein#add('zchee/deoplete-jedi', {
         \ "autoload" : {
@@ -144,3 +150,15 @@ if !exists("g:markdown_runners")
                 \ }
 endif
 
+let g:quickrun_config = {
+    \ '_': {
+        \ 'runner': 'neovim_job',
+        \ 'outputter': 'error',
+        \ 'outputter/error/success': 'buffer',
+        \ 'outputter/error/error': 'quickfix',
+        \ 'outputter/buffer/split': ':botright 8sp'
+    \ }
+\}
+
+let g:quickrun_no_default_key_mappings = 1
+nmap <Leader>r :cclose<CR>:write<CR>:QuickRun -mode n<CR>
