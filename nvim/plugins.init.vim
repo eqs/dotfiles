@@ -27,7 +27,6 @@ if dein#load_state(s:dein_dir)
     call dein#add('wokalski/autocomplete-flow')
     call dein#add('Shougo/neosnippet')
     call dein#add('Shougo/neosnippet-snippets')
-    let g:neosnippet#enable_completed_snippet = 1
 
     call dein#add('Shougo/denite.nvim')
 
@@ -45,24 +44,24 @@ if dein#load_state(s:dein_dir)
         call dein#add('roxma/vim-hug-neovim-rpc')
     endif
 
-    let g:deoplete#enable_at_startup = 1
-
     call dein#add('zchee/deoplete-jedi', {
         \ "autoload" : {
         \   "filetypes" : ['python']
         \}})
-    let g:deoplete#sources#jedi#python_path=$PYTHONPATH . 'python'
 
     " Trailing
     call dein#add('bronson/vim-trailing-whitespace')
 
     " VimでProcessing書くためのやつ
     call dein#add('sophacles/vim-processing')
+
     " Pythonのpep8インデント
     call dein#add('Vimjas/vim-python-pep8-indent', {
         \ "autoload" : {
         \   "filetypes" : ['python']
         \}})
+    call dein#add('jpalardy/vim-slime', { 'on_ft': 'python' })
+    call dein#add('hanschen/vim-ipython-cell', { 'on_ft': 'python' })
 
     " GLSL
     call dein#add('tikhomirov/vim-glsl')
@@ -70,7 +69,6 @@ if dein#load_state(s:dein_dir)
 
     " Julia
     call dein#add('JuliaEditorSupport/julia-vim')
-    let g:latex_to_unicode_auto = 1
 
     " Stan
     call dein#add('maverickg/stan.vim')
@@ -83,7 +81,6 @@ if dein#load_state(s:dein_dir)
     " かっこいい
     call dein#add('vim-airline/vim-airline')
     call dein#add('vim-airline/vim-airline-themes')
-    let g:airline_theme = 'dark'
     " フォントサイズを変える
     call dein#add('vim-scripts/zoom.vim')
     " おしゃれカラースキーム
@@ -138,6 +135,13 @@ function! MyTex2imgRunner(src)
     call delete(tmp)
     return res
 endfunction
+
+" TODO: ちゃんとtomlにかく
+let g:neosnippet#enable_completed_snippet = 1
+let g:deoplete#enable_at_startup = 1
+"let g:deoplete#sources#jedi#python_path=join([$PYTHONPATH, 'python.exe'], "\\")
+let g:latex_to_unicode_auto = 1
+let g:airline_theme = 'dark'
 
 if !exists("g:markdown_runners")
     let g:markdown_runners = {
