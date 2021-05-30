@@ -1,0 +1,153 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'wokalski/autocomplete-flow'
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+depends = 'neosnippet-snippets'
+hook_add = '''
+    let g:neosnippet#enable_completed_snippet = 1
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+depends = 'vim-quickrun-neovim-job'
+hook_add = '''
+    let g:quickrun_config = {
+        \ '_': {
+            \ 'runner': 'neovim_job',
+            \ 'outputter': 'error',
+            \ 'outputter/error/success': 'buffer',
+            \ 'outputter/error/error': 'quickfix',
+            \ 'outputter/buffer/split': ':botright 8sp'
+        \ }
+    \}
+
+    let g:quickrun_no_default_key_mappings = 1
+    nmap <Leader>r :cclose<CR>:write<CR>:QuickRun -mode n<CR>
+'''
+
+[[plugins]]
+repo = 'lambdalisue/vim-quickrun-neovim-job'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+    let g:deoplete#enable_at_startup = 1
+    "let g:deoplete#sources#jedi#python_path=join([$PYTHONPATH, 'python.exe'], "\\")
+'''
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+on_ft = 'python'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+hook_add = '''
+    nnoremap <Leader>f :FixWhitespace<CR>
+'''
+
+[[plugins]]
+repo = 'sophacles/vim-processing'
+
+[[plugins]]
+repo = 'Vimjas/vim-python-pep8-indent'
+on_ft = 'python'
+
+[[plugins]]
+repo = 'tikhomirov/vim-glsl'
+hook_add = '''
+    autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
+'''
+
+[[plugins]]
+repo = 'JuliaEditorSupport/julia-vim'
+
+[[plugins]]
+repo = 'maverickg/stan.vim'
+
+[[plugins]]
+repo = 'posva/vim-vue'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = 'vim-airline-themes'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+    let g:airline_theme = 'dark'
+'''
+
+[[plugins]]
+repo = 'vim-scripts/zoom.vim'
+
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+[[plugins]]
+repo = 'dbridges/vim-markdown-runner'
+hook_add = '''
+    function! MyTex2imgRunner(src)
+        let tmp = tempname() . ".tex"
+        let src = a:src
+
+        " コードの最初にコメントとして挿入されているファイル名を取得する
+        " 無ければ`_output.svg`が標準のファイル名になる
+        let matched = matchlist(src[0], "^\%\\s*\\(.*\.\\(svg\\|pdf\\|png\\)\\)")
+        if len(matched) >= 2
+            let out = matched[1]
+        else
+            let out = "_output.svg"
+        endif
+
+        " tex2imgに突っ込むコードを生成する
+        let joined_src = join(src[1:], "\n")
+        let src = split(
+                \ "\\documentclass[fleqn,papersize,dvipdfmx]{jsarticle}\n"
+                \. "\\usepackage{tikz,graphicx}\n"
+                \. "\\usepackage{amsmath,amssymb}\n"
+                \. "\\usepackage{color}\n"
+                \. "\\pagestyle{empty}\n"
+                \. "\\begin{document}\n"
+                \. joined_src
+                \. "\n\\end{document}\n", "\n")
+
+        call writefile(src, tmp)
+        let res = system("tex2imgc /transparent /embed-source /quiet /margins=8 " . tmp . " " . out)
+        call delete(tmp)
+        return res
+    endfunction
+
+    autocmd FileType markdown nnoremap <buffer> <Leader>r :MarkdownRunner<CR>
+    autocmd FileType markdown nnoremap <buffer> <Leader>R :MarkdownRunnerInsert<CR>
+
+    if !exists("g:markdown_runners")
+        let g:markdown_runners = {
+                    \ '': getenv('SHELL'),
+                    \ 'go': function("markdown_runner#RunGoBlock"),
+                    \ 'js': 'node',
+                    \ 'javascript': 'node',
+                    \ 'vim': function("markdown_runner#RunVimBlock"),
+                    \ 'tex2img': function('MyTex2imgRunner')
+                    \ }
+    endif
+'''
