@@ -6,6 +6,12 @@ repo = 'Shougo/vimproc.vim'
 build = 'make'
 
 [[plugins]]
+repo = 'inkarkat/vim-SyntaxRange'
+hook_add = """
+    autocmd MyAutoCmd BufNewFile,BufRead *.toml call SyntaxRange#Include("hook_add = '''", "'''", 'vim', '')
+"""
+
+[[plugins]]
 repo = 'wokalski/autocomplete-flow'
 
 [[plugins]]
@@ -52,6 +58,13 @@ hook_add = '''
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
 on_ft = 'python'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
+depends = ['vim-lsp', 'deoplete.nvim']
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
