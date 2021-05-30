@@ -96,6 +96,9 @@ repo = 'vim-scripts/zoom.vim'
 
 [[plugins]]
 repo = 'tomasr/molokai'
+hook_add = '''
+    colorscheme molokai
+'''
 
 [[plugins]]
 repo = 'cocopon/iceberg.vim'

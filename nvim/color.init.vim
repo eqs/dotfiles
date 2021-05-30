@@ -1,5 +1,3 @@
-colorscheme molokai
-
 " 改行とかタブとかを表示する
 set list
 set listchars=eol:$,tab:>\ ,trail:_,extends:<
