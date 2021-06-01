@@ -163,7 +163,8 @@ hook_add = '''
                     \ 'js': 'node',
                     \ 'javascript': 'node',
                     \ 'vim': function("markdown_runner#RunVimBlock"),
-                    \ 'tex2img': function('MyTex2imgRunner')
+                    \ 'tex2img': function('MyTex2imgRunner'),
+                    \ 'tex': function('MyTex2imgRunner')
                     \ }
     endif
 '''
