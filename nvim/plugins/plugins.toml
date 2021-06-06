@@ -95,6 +95,9 @@ repo = 'maverickg/stan.vim'
 repo = 'posva/vim-vue'
 
 [[plugins]]
+repo = 'rust-lang/rust.vim'
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 depends = 'vim-airline-themes'
 
