@@ -127,6 +127,9 @@ repo = 'cocopon/iceberg.vim'
 repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
+repo = 'NLKNguyen/papercolor-theme'
+
+[[plugins]]
 repo = 'dbridges/vim-markdown-runner'
 hook_add = '''
     function! MyTex2imgRunner(src)
