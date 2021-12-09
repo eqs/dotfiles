@@ -133,6 +133,14 @@ repo = 'NLKNguyen/papercolor-theme'
 repo = 'altercation/vim-colors-solarized'
 
 [[plugins]]
+repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'previm/previm'
+build = 'pip install docutils'
+depends = ['open-browser.vim']
+
+[[plugins]]
 repo = 'dbridges/vim-markdown-runner'
 hook_add = '''
     function! MyTex2imgRunner(src)
