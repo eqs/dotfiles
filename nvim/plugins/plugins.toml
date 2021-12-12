@@ -153,6 +153,7 @@ hook_add = '''
                 \. "\\usepackage{amsmath,amssymb}\n"
                 \. "\\usepackage{color}\n"
                 \. "\\pagestyle{empty}\n"
+                \. "\\usetikzlibrary{calc,positioning,arrows,shapes,automata}\n"
                 \. "\\begin{document}\n"
                 \. joined_src
                 \. "\n\\end{document}\n", "\n")
