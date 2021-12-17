@@ -164,12 +164,13 @@ hook_add = '''
                 \. "\\usepackage{amsmath,amssymb}\n"
                 \. "\\usepackage{color}\n"
                 \. "\\pagestyle{empty}\n"
+                \. "\\usetikzlibrary{calc,positioning,arrows,shapes,automata}\n"
                 \. "\\begin{document}\n"
                 \. joined_src
                 \. "\n\\end{document}\n", "\n")
 
         call writefile(src, tmp)
-        let res = system("tex2imgc /transparent /embed-source /quiet /margins=8 " . tmp . " " . out)
+        let res = system("tex2imgc /transparent /keep-page-size /embed-source /quiet /margins=8 " . tmp . " " . out)
         call delete(tmp)
         return res
     endfunction
