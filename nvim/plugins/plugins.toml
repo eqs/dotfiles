@@ -195,5 +195,8 @@ hook_add = '''
 repo = 'euclio/vim-markdown-composer'
 build = 'cargo build --release'
 hook_add = '''
+let s:css_dir = fnamemodify(expand('$MYVIMRC'), ':h') . '/plugins/markdown-composer'
 let g:markdown_composer_autostart = 0
+let g:markdown_composer_custom_css = ['file://' . s:css_dir . '/mystyle.css']
+let g:markdown_composer_syntax_theme = 'monokai'
 '''
