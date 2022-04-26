@@ -190,3 +190,10 @@ hook_add = '''
                     \ }
     endif
 '''
+
+[[plugins]]
+repo = 'euclio/vim-markdown-composer'
+build = 'cargo build --release'
+hook_add = '''
+let g:markdown_composer_autostart = 0
+'''
