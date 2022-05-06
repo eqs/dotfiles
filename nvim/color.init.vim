@@ -13,9 +13,6 @@ highlight CursorLine gui=underline guifg=NONE guibg=NONE
 " 80文字目に線をいれる
 set colorcolumn=80
 
-" フォントの設定
-set guifont=MigMix\ 1M:h12
-
 "メニューを英語にする
 source $VIMRUNTIME/delmenu.vim
 "set langmenu=ja_jp.utf-8
@@ -24,8 +21,4 @@ source $VIMRUNTIME/menu.vim
 if has("multi_lang")
     language C
 endif
-
-" マウスの設定
-set mouse=ar
-set mousemodel=popup
 
