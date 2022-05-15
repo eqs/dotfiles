@@ -37,7 +37,8 @@ hook_add = '''
             \ 'outputter': 'error',
             \ 'outputter/error/success': 'buffer',
             \ 'outputter/error/error': 'quickfix',
-            \ 'outputter/buffer/split': ':botright 8sp'
+            \ 'outputter/buffer/split': ':botright 8sp',
+            \ 'outputter/buffer/close_on_empty': 1
         \ }
     \}
 
