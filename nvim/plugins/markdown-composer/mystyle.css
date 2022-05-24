@@ -13,7 +13,7 @@
 
 body, html {
     background-color: var(--main-bg-color);
-    font-family: 'Noto Sans JP', 'sans serif';
+    font-family: 'Noto Sans JP', 'MigMix 1P', 'sans serif';
 }
 
 article#markdown-preview h1.title {
