@@ -86,3 +86,11 @@ article#markdown-preview pre code {
     font-family: "MigMix 1M", "Source Code Pro", Monaco, Inconsolata, monospace;
     padding: 16px 8px;
 }
+
+table, td, th {
+    border: 1.5px #4c4c4c solid;
+}
+
+td, th {
+    padding: 8px;
+}
