@@ -67,6 +67,11 @@ autocmd FileType make set noexpandtab
 autocmd FileType rst set tabstop=3
 autocmd FileType rst set shiftwidth=3
 
+"TypeScriptではタブ幅を2文字にする
+autocmd BufRead,BufNewFile *.ts,*.tsx set filetype=typescript
+autocmd FileType typescript set tabstop=2
+autocmd FileType typescript set shiftwidth=2
+
 " ##########################################################################
 
 "正規表現をVery Magicに
