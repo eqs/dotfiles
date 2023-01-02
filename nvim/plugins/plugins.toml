@@ -134,6 +134,12 @@ repo = 'NLKNguyen/papercolor-theme'
 repo = 'altercation/vim-colors-solarized'
 
 [[plugins]]
+repo = 'jdonaldson/vaxe'
+hook_add = '''
+g:vaxe_enable_airline_defaults = 0
+'''
+
+[[plugins]]
 repo = 'tyru/open-browser.vim'
 
 [[plugins]]
