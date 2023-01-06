@@ -140,6 +140,9 @@ repo = 'altercation/vim-colors-solarized'
 # '''
 
 [[plugins]]
+repo = 'hura/vim-asymptote'
+
+[[plugins]]
 repo = 'tyru/open-browser.vim'
 
 [[plugins]]
