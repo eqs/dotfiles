@@ -139,6 +139,19 @@ repo = 'NLKNguyen/papercolor-theme'
 repo = 'altercation/vim-colors-solarized'
 
 [[plugins]]
+repo = 'jdonaldson/vaxe'
+hook_add = '''
+let g:vaxe_haxe_version = 4
+let g:vaxe_enable_airline_defaults = 0
+autocmd MyAutoCmd FileType haxe setl autowrite
+autocmd MyAutoCmd FileType hxml setl autowrite
+autocmd MyAutoCmd FileType nmml.xml setl autowrite
+'''
+
+[[plugins]]
+repo = 'hura/vim-asymptote'
+
+[[plugins]]
 repo = 'tyru/open-browser.vim'
 
 [[plugins]]
