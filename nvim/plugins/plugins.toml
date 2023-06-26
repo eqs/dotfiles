@@ -108,6 +108,9 @@ repo = 'posva/vim-vue'
 repo = 'rust-lang/rust.vim'
 
 [[plugins]]
+repo = 'vmchale/just-vim'
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 depends = 'vim-airline-themes'
 
