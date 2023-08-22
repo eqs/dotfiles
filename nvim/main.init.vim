@@ -72,6 +72,11 @@ autocmd BufRead,BufNewFile *.ts,*.tsx set filetype=typescript
 autocmd FileType typescript set tabstop=2
 autocmd FileType typescript set shiftwidth=2
 
+"JavaScriptではタブ幅を2文字にする
+autocmd BufRead,BufNewFile *.js,*.jsx set filetype=javascript
+autocmd FileType javascript set tabstop=2
+autocmd FileType javascript set shiftwidth=2
+
 " ##########################################################################
 
 "正規表現をVery Magicに
