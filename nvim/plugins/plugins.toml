@@ -96,6 +96,12 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'lepture/vim-jinja'
+hook_add = '''
+    autocmd! BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
+'''
+
+[[plugins]]
 repo = 'JuliaEditorSupport/julia-vim'
 
 [[plugins]]
