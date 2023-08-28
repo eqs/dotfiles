@@ -58,7 +58,7 @@ set autoread
 set undodir=~/.vim/undotmp
 
 "タブをスペース展開しない
-autocmd FileType tex,java,c,cs,cpp,h,hpp set noexpandtab
+autocmd FileType tex,java,cs set noexpandtab
 
 "Makefileではタブをスペース展開しない
 autocmd FileType make set noexpandtab
