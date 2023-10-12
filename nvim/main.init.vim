@@ -136,6 +136,13 @@ nnoremap tn gt
 " 前のタブ
 nnoremap tp gT
 
+" convert punctuation marks
+nnoremap <Leader>cp :%s/、/，/ge<CR>:%s/。/．/ge<CR>
+vnoremap <Leader>cp :s/、/，/ge<CR>gv:s/。/．/ge<CR>
+
+nnoremap <Leader>ip :%s/，/、/ge<CR>:%s/．/。/ge<CR>
+vnoremap <Leader>ip :s/，/、/ge<CR>gv:s/．/。/ge<CR>
+
 " ##########################################################################
 
 " 印刷の設定
