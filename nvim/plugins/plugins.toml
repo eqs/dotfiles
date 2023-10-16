@@ -83,6 +83,16 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
+repo = 'peitalin/vim-jsx-typescript'
+depends = ['typescript-vim']
+hook_add = '''
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+'''
+
+[[plugins]]
 repo = 'sophacles/vim-processing'
 
 [[plugins]]
