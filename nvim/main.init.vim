@@ -146,9 +146,9 @@ vnoremap <Leader>ip :s/，/、/ge<CR>gv:s/．/。/ge<CR>
 " ##########################################################################
 
 " 印刷の設定
-set printheader=%t\ Page\ %N\ (%{strftime('%c')})%=
-set printoptions=wrap:y,number:y
-set printfont=MigMix\ 1M:h12
+" set printheader=%t\ Page\ %N\ (%{strftime('%c')})%=
+" set printoptions=wrap:y,number:y
+" set printfont=MigMix\ 1M:h12
 
 command Hardcopy call Hardcopy()
 function! Hardcopy()

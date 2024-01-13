@@ -62,15 +62,25 @@ on_ft = 'python'
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
+hook_add = '''
+let g:lsp_log_file = expand('~/vim-lsp.log')
+if executable('clangd')
+    call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'h', 'hpp'],
+        \ })
+endif
+'''
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 depends = ['vim-lsp', 'deoplete.nvim']
-hook_add = '''
-    let g:lsp_settings = {
-    \ 'typescript-language-server': { 'cmd': [&shell, &shellcmdflag, 'typescript-language-server --stdio']}
-    \}
-'''
+# hook_add = '''
+#     let g:lsp_settings = {
+#     \ 'typescript-language-server': { 'cmd': [&shell, &shellcmdflag, 'typescript-language-server --stdio']}
+#     \}
+# '''
 
 [[plugins]]
 repo = 'lighttiger2505/deoplete-vim-lsp'
