@@ -68,14 +68,19 @@ autocmd FileType rst set tabstop=3
 autocmd FileType rst set shiftwidth=3
 
 "TypeScriptではタブ幅を2文字にする
-autocmd BufRead,BufNewFile *.ts,*.tsx set filetype=typescript
+autocmd BufRead,BufNewFile *.ts set filetype=typescript
 autocmd FileType typescript set tabstop=2
 autocmd FileType typescript set shiftwidth=2
 
 "JavaScriptではタブ幅を2文字にする
-autocmd BufRead,BufNewFile *.js,*.jsx set filetype=javascript
+autocmd BufRead,BufNewFile *.js set filetype=javascript
 autocmd FileType javascript set tabstop=2
 autocmd FileType javascript set shiftwidth=2
+
+"React TypeScriptではタブ幅を2文字にする
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+autocmd FileType typescriptreact set tabstop=2
+autocmd FileType typescriptreact set shiftwidth=2
 
 " ##########################################################################
 

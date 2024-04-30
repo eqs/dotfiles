@@ -76,11 +76,15 @@ endif
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 depends = ['vim-lsp', 'deoplete.nvim']
-# hook_add = '''
-#     let g:lsp_settings = {
-#     \ 'typescript-language-server': { 'cmd': [&shell, &shellcmdflag, 'typescript-language-server --stdio']}
-#     \}
-# '''
+hook_add = '''
+let g:lsp_settings = {
+    \ 'typescript-language-server':
+        \ {
+            \ 'cmd': [&shell, &shellcmdflag, 'typescript-language-server --stdio'],
+            \ 'whitelist': ['typescript', 'typescriptreact'],
+        \ }
+    \ }
+'''
 
 [[plugins]]
 repo = 'lighttiger2505/deoplete-vim-lsp'
@@ -93,14 +97,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'leafgarland/typescript-vim'
-
-[[plugins]]
 repo = 'peitalin/vim-jsx-typescript'
-depends = ['typescript-vim']
-hook_add = '''
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
-'''
 
 [[plugins]]
 repo = 'sophacles/vim-processing'
