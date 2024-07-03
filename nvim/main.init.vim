@@ -63,6 +63,10 @@ autocmd FileType tex,java set noexpandtab
 "Makefileではタブをスペース展開しない
 autocmd FileType make set noexpandtab
 
+"xmlではタブ幅を2文字にする
+autocmd FileType xml set tabstop=2
+autocmd FileType xml set shiftwidth=2
+
 " reStructuredTextではタブ幅を3文字にする
 autocmd FileType rst set tabstop=3
 autocmd FileType rst set shiftwidth=3
