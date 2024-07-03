@@ -58,7 +58,7 @@ set autoread
 set undodir=~/.vim/undotmp
 
 "タブをスペース展開しない
-autocmd FileType tex,java,css set noexpandtab
+autocmd FileType tex,java set noexpandtab
 
 "Makefileではタブをスペース展開しない
 autocmd FileType make set noexpandtab
@@ -71,16 +71,25 @@ autocmd FileType rst set shiftwidth=3
 autocmd BufRead,BufNewFile *.ts set filetype=typescript
 autocmd FileType typescript set tabstop=2
 autocmd FileType typescript set shiftwidth=2
+autocmd FileType typescript set expandtab
 
 "JavaScriptではタブ幅を2文字にする
 autocmd BufRead,BufNewFile *.js set filetype=javascript
 autocmd FileType javascript set tabstop=2
 autocmd FileType javascript set shiftwidth=2
+autocmd FileType javascript set expandtab
 
 "React TypeScriptではタブ幅を2文字にする
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 autocmd FileType typescriptreact set tabstop=2
 autocmd FileType typescriptreact set shiftwidth=2
+autocmd FileType typescriptreact set expandtab
+
+"css
+autocmd BufRead,BufNewFile *.css set filetype=css
+autocmd FileType css set tabstop=2
+autocmd FileType css set shiftwidth=2
+autocmd FileType css set expandtab
 
 " ##########################################################################
 
