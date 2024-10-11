@@ -12,6 +12,13 @@ hook_add = """
 """
 
 [[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'folke/todo-comments.nvim'
+depends = 'plenary.nvim'
+
+[[plugins]]
 repo = 'wokalski/autocomplete-flow'
 
 [[plugins]]
@@ -89,6 +96,9 @@ let g:lsp_settings = {
 [[plugins]]
 repo = 'lighttiger2505/deoplete-vim-lsp'
 depends = ['vim-lsp', 'deoplete.nvim']
+
+[[plugins]]
+repo = 'adah1972/vim-copy-as-rtf'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
