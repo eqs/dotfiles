@@ -1,0 +1,22 @@
+[terminal.shell]
+
+program = "/bin/zsh"
+args = ["-l"]
+
+[window]
+
+padding = { x = 0, y = 0 }
+opacity = 1.0
+
+
+[keyboard]
+
+bindings = [
+  # { key = "N", mods = "Control|Shift", action = "CreateNewWindow" }
+]
+
+[font]
+
+size = 20
+normal = { family = "MigMix 1M", style = "Regular" }
+offset = { x = 0, y = -6 }
