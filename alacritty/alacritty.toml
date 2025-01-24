@@ -1,3 +1,10 @@
+[general]
+import = [
+    # "~/.config/alacritty/themes/themes/papercolor_dark.toml",
+    # "~/.config/alacritty/themes/themes/zenburn.toml",
+    "~/.config/alacritty/themes/themes/solarized_light.toml",
+]
+
 [terminal.shell]
 
 program = "/bin/zsh"
@@ -5,9 +12,13 @@ args = ["-l"]
 
 [window]
 
-padding = { x = 0, y = 0 }
+padding = { x = 4, y = 0 }
 opacity = 1.0
 
+[window.dimensions]
+
+columns = 120
+lines = 32
 
 [keyboard]
 

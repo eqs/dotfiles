@@ -1,4 +1,5 @@
 nvim/local.init.vim
+alacritty/themes/
 
 *~
 *.swp
