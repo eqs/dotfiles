@@ -196,6 +196,9 @@ build = 'pip install docutils'
 depends = ['open-browser.vim']
 
 [[plugins]]
+repo = 'kaarmu/typst.vim'
+
+[[plugins]]
 repo = 'dbridges/vim-markdown-runner'
 hook_add = '''
     function! MyTex2imgRunner(src)
